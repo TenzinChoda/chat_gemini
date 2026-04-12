@@ -13,17 +13,11 @@ If your repository has a parent folder (for example you clone into `my-project/`
 **Step 1 — Clone the repository**
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git
-cd YOUR_REPO
+git clone https://github.com/OmPrakash-Acharya99/Bt_chatbot.git
+cd Bt_chatbot
 ```
 
-If the chatbot code is in a subfolder, go into it (example):
-
-```bash
-cd bt_chatbot
-```
-
-Confirm you see `requirements.txt` in the current directory (`ls` on Linux/macOS, `dir` on Windows).
+Confirm you see **`requirements.txt`** in the current directory (`ls` on Linux/macOS, `dir` on Windows). This repository uses **`Bt_chatbot`** as the project root (there is no extra nested `bt_chatbot` folder after clone).
 
 **Step 2 — Create a Python virtual environment**
 
