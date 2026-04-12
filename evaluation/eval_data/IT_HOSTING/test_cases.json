@@ -1,0 +1,18 @@
+{
+  "domain": "IT_HOSTING",
+  "description": "Email hosting, web hosting, domain — IT services category in structured/website data (typically RAG).",
+  "cases": [
+    {
+      "id": "it-01",
+      "user_input": "email hosting service for my domain bt",
+      "expected_intent": "rag",
+      "expected_method": "rag"
+    },
+    {
+      "id": "it-02",
+      "user_input": "web hosting cpanel domain registration",
+      "expected_intent": "rag",
+      "expected_method": "rag"
+    }
+  ]
+}

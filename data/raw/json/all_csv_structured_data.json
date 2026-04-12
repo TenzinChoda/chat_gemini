@@ -1,0 +1,3053 @@
+{
+  "generated_at_utc": "2026-03-31T16:01:05.097857+00:00",
+  "source_directory": "C:\\Users\\User\\OneDrive\\Desktop\\data\\structured_output",
+  "total_csv_files": 24,
+  "total_chatbot_documents": 240,
+  "tables": [
+    {
+      "table_name": "4G&5G BT-AirFiber",
+      "source_csv": "4G&5G BT-AirFiber.csv",
+      "category": "pricing",
+      "row_count": 7,
+      "columns": [
+        {
+          "original": "Plan/Package",
+          "normalized": "plan_package"
+        },
+        {
+          "original": "Bandwidth",
+          "normalized": "bandwidth"
+        },
+        {
+          "original": "Data Quota (GB)",
+          "normalized": "data_quota_gb"
+        },
+        {
+          "original": "Data Quota with GST (GB)",
+          "normalized": "data_quota_with_gst_gb"
+        },
+        {
+          "original": "Fair Usage Speed",
+          "normalized": "fair_usage_speed"
+        }
+      ],
+      "rows": [
+        {
+          "row_number": 1,
+          "data": {
+            "plan_package": 3999,
+            "bandwidth": "< 200 Mbps",
+            "data_quota_gb": 900,
+            "data_quota_with_gst_gb": 857.14,
+            "fair_usage_speed": "2 mbps"
+          }
+        },
+        {
+          "row_number": 2,
+          "data": {
+            "plan_package": 3499,
+            "bandwidth": "< 150 Mbps",
+            "data_quota_gb": 780,
+            "data_quota_with_gst_gb": 742.86,
+            "fair_usage_speed": "2 mbps"
+          }
+        },
+        {
+          "row_number": 3,
+          "data": {
+            "plan_package": 2999,
+            "bandwidth": "< 100 Mbps",
+            "data_quota_gb": 660,
+            "data_quota_with_gst_gb": 628.57,
+            "fair_usage_speed": "2 mbps"
+          }
+        },
+        {
+          "row_number": 4,
+          "data": {
+            "plan_package": 2499,
+            "bandwidth": "< 50 Mbps",
+            "data_quota_gb": 540,
+            "data_quota_with_gst_gb": 514.29,
+            "fair_usage_speed": "2 mbps"
+          }
+        },
+        {
+          "row_number": 5,
+          "data": {
+            "plan_package": 1999,
+            "bandwidth": "< 30 Mbps",
+            "data_quota_gb": 420,
+            "data_quota_with_gst_gb": 400,
+            "fair_usage_speed": "1 mbps"
+          }
+        },
+        {
+          "row_number": 6,
+          "data": {
+            "plan_package": 1499,
+            "bandwidth": "< 15 Mbps",
+            "data_quota_gb": 300,
+            "data_quota_with_gst_gb": 285.71,
+            "fair_usage_speed": "1 mbps"
+          }
+        },
+        {
+          "row_number": 7,
+          "data": {
+            "plan_package": 1099,
+            "bandwidth": "< 5 Mbps",
+            "data_quota_gb": 200,
+            "data_quota_with_gst_gb": 190.48,
+            "fair_usage_speed": "512 kbps"
+          }
+        }
+      ]
+    },
+    {
+      "table_name": "Apple",
+      "source_csv": "Apple.csv",
+      "category": "device_sales",
+      "row_count": 7,
+      "columns": [
+        {
+          "original": "Sl.No",
+          "normalized": "sl_no"
+        },
+        {
+          "original": "Item Name",
+          "normalized": "item_name"
+        },
+        {
+          "original": "Western Region",
+          "normalized": "western_region"
+        },
+        {
+          "original": "Eastern Region",
+          "normalized": "eastern_region"
+        },
+        {
+          "original": "Central Region",
+          "normalized": "central_region"
+        },
+        {
+          "original": "South Western Region",
+          "normalized": "south_western_region"
+        },
+        {
+          "original": "Total Sales",
+          "normalized": "total_sales"
+        },
+        {
+          "original": "Selling Price",
+          "normalized": "selling_price"
+        }
+      ],
+      "rows": [
+        {
+          "row_number": 1,
+          "data": {
+            "sl_no": 1,
+            "item_name": "IPhone 17 256GB",
+            "western_region": 26,
+            "eastern_region": 0,
+            "central_region": 1,
+            "south_western_region": 2,
+            "total_sales": 29,
+            "selling_price": 83999.0
+          }
+        },
+        {
+          "row_number": 2,
+          "data": {
+            "sl_no": 3,
+            "item_name": "iPhone 17 Pro 256GB",
+            "western_region": 39,
+            "eastern_region": 6,
+            "central_region": 9,
+            "south_western_region": 0,
+            "total_sales": 54,
+            "selling_price": 117999.0
+          }
+        },
+        {
+          "row_number": 3,
+          "data": {
+            "sl_no": 4,
+            "item_name": "iPhone 17 Pro 512GB",
+            "western_region": 2,
+            "eastern_region": 0,
+            "central_region": 1,
+            "south_western_region": 0,
+            "total_sales": 3,
+            "selling_price": 139999.0
+          }
+        },
+        {
+          "row_number": 4,
+          "data": {
+            "sl_no": 5,
+            "item_name": "iPhone 17 Pro Max 256GB",
+            "western_region": 51,
+            "eastern_region": 7,
+            "central_region": 10,
+            "south_western_region": 3,
+            "total_sales": 71,
+            "selling_price": 129999.0
+          }
+        },
+        {
+          "row_number": 5,
+          "data": {
+            "sl_no": 6,
+            "item_name": "iPhone 17 Pro Max 512GB",
+            "western_region": 10,
+            "eastern_region": 3,
+            "central_region": 6,
+            "south_western_region": 1,
+            "total_sales": 20,
+            "selling_price": 150999.0
+          }
+        },
+        {
+          "row_number": 6,
+          "data": {
+            "sl_no": 7,
+            "item_name": "iPhone Air",
+            "western_region": 2,
+            "eastern_region": 0,
+            "central_region": 0,
+            "south_western_region": 0,
+            "total_sales": 2,
+            "selling_price": 88000.0
+          }
+        },
+        {
+          "row_number": 7,
+          "data": {
+            "sl_no": null,
+            "item_name": "Total",
+            "western_region": 130,
+            "eastern_region": 16,
+            "central_region": 27,
+            "south_western_region": 6,
+            "total_sales": 179,
+            "selling_price": null
+          }
+        }
+      ]
+    },
+    {
+      "table_name": "E-Load Validity",
+      "source_csv": "E-Load Validity.csv",
+      "category": "general",
+      "row_count": 6,
+      "columns": [
+        {
+          "original": "Rate",
+          "normalized": "rate"
+        },
+        {
+          "original": "Validity",
+          "normalized": "validity"
+        }
+      ],
+      "rows": [
+        {
+          "row_number": 1,
+          "data": {
+            "rate": "Nu. 501+",
+            "validity": "90 days"
+          }
+        },
+        {
+          "row_number": 2,
+          "data": {
+            "rate": "Nu. 301 - Nu. 500",
+            "validity": "60 days"
+          }
+        },
+        {
+          "row_number": 3,
+          "data": {
+            "rate": "Nu. 101 - Nu. 300",
+            "validity": "52 days"
+          }
+        },
+        {
+          "row_number": 4,
+          "data": {
+            "rate": "Nu. 51 - Nu. 100",
+            "validity": "37 days"
+          }
+        },
+        {
+          "row_number": 5,
+          "data": {
+            "rate": "Nu. 21 - Nu. 50",
+            "validity": "22 days"
+          }
+        },
+        {
+          "row_number": 6,
+          "data": {
+            "rate": "Nu. 5 - Nu. 20",
+            "validity": "14 days"
+          }
+        }
+      ]
+    },
+    {
+      "table_name": "Honor",
+      "source_csv": "Honor.csv",
+      "category": "device_sales",
+      "row_count": 7,
+      "columns": [
+        {
+          "original": "Sl.No",
+          "normalized": "sl_no"
+        },
+        {
+          "original": "Item Name",
+          "normalized": "item_name"
+        },
+        {
+          "original": "Western Region",
+          "normalized": "western_region"
+        },
+        {
+          "original": "Eastern Region",
+          "normalized": "eastern_region"
+        },
+        {
+          "original": "Central Region",
+          "normalized": "central_region"
+        },
+        {
+          "original": "South Western Region",
+          "normalized": "south_western_region"
+        },
+        {
+          "original": "Total Sales",
+          "normalized": "total_sales"
+        },
+        {
+          "original": "Selling Price",
+          "normalized": "selling_price"
+        }
+      ],
+      "rows": [
+        {
+          "row_number": 1,
+          "data": {
+            "sl_no": 1,
+            "item_name": "HONOR 400 Pro 12GB+512GB",
+            "western_region": 1,
+            "eastern_region": 1,
+            "central_region": 0,
+            "south_western_region": 0,
+            "total_sales": 2,
+            "selling_price": 41899
+          }
+        },
+        {
+          "row_number": 2,
+          "data": {
+            "sl_no": 2,
+            "item_name": "HONOR X6c 6GB+128GB",
+            "western_region": 7,
+            "eastern_region": 0,
+            "central_region": 0,
+            "south_western_region": 1,
+            "total_sales": 8,
+            "selling_price": 8999
+          }
+        },
+        {
+          "row_number": 3,
+          "data": {
+            "sl_no": 3,
+            "item_name": "HONOR X6c 6GB+256GB",
+            "western_region": 7,
+            "eastern_region": 0,
+            "central_region": 0,
+            "south_western_region": 0,
+            "total_sales": 7,
+            "selling_price": 10099
+          }
+        },
+        {
+          "row_number": 4,
+          "data": {
+            "sl_no": 4,
+            "item_name": "HONOR X9c 12GB+256GB",
+            "western_region": 2,
+            "eastern_region": 0,
+            "central_region": 0,
+            "south_western_region": 1,
+            "total_sales": 3,
+            "selling_price": 25199
+          }
+        },
+        {
+          "row_number": 5,
+          "data": {
+            "sl_no": 5,
+            "item_name": "HONOR X9d 12GB+256GB",
+            "western_region": 1,
+            "eastern_region": 0,
+            "central_region": 0,
+            "south_western_region": 1,
+            "total_sales": 2,
+            "selling_price": 27999
+          }
+        },
+        {
+          "row_number": 6,
+          "data": {
+            "sl_no": 6,
+            "item_name": "HONOR X9d 8GB+256GB",
+            "western_region": 0,
+            "eastern_region": 0,
+            "central_region": 0,
+            "south_western_region": 1,
+            "total_sales": 1,
+            "selling_price": 25399
+          }
+        },
+        {
+          "row_number": 7,
+          "data": {
+            "sl_no": null,
+            "item_name": "Total",
+            "western_region": 18,
+            "eastern_region": 1,
+            "central_region": 0,
+            "south_western_region": 4,
+            "total_sales": 23,
+            "selling_price": null
+          }
+        }
+      ]
+    },
+    {
+      "table_name": "international_tariff",
+      "source_csv": "international_tariff.csv",
+      "category": "pricing",
+      "row_count": 6,
+      "columns": [
+        {
+          "original": "call_category",
+          "normalized": "call_category"
+        },
+        {
+          "original": "rate",
+          "normalized": "rate"
+        },
+        {
+          "original": "charging_unit",
+          "normalized": "charging_unit"
+        }
+      ],
+      "rows": [
+        {
+          "row_number": 1,
+          "data": {
+            "call_category": "India Calls",
+            "rate": "Nu. 4",
+            "charging_unit": "1 Minute"
+          }
+        },
+        {
+          "row_number": 2,
+          "data": {
+            "call_category": "Charge Band-I",
+            "rate": "Nu. 15.00",
+            "charging_unit": "1 Minute"
+          }
+        },
+        {
+          "row_number": 3,
+          "data": {
+            "call_category": "Charge Band-II",
+            "rate": "Nu. 18.00",
+            "charging_unit": "1Minute"
+          }
+        },
+        {
+          "row_number": 4,
+          "data": {
+            "call_category": "Charge Band-III",
+            "rate": "Nu. 25.00",
+            "charging_unit": "1 Minute"
+          }
+        },
+        {
+          "row_number": 5,
+          "data": {
+            "call_category": "Charge Band-IV",
+            "rate": "Nu. 30.00",
+            "charging_unit": "1 Minute"
+          }
+        },
+        {
+          "row_number": 6,
+          "data": {
+            "call_category": "Charge Band-V",
+            "rate": "Nu. 35.00",
+            "charging_unit": "1 Minute"
+          }
+        }
+      ]
+    },
+    {
+      "table_name": "late_night_unlimited_plans",
+      "source_csv": "late_night_unlimited_plans.csv",
+      "category": "pricing",
+      "row_count": 2,
+      "columns": [
+        {
+          "original": "plan",
+          "normalized": "plan"
+        },
+        {
+          "original": "rate_nu",
+          "normalized": "rate_nu"
+        },
+        {
+          "original": "data_quota",
+          "normalized": "data_quota"
+        },
+        {
+          "original": "rate_with_gst_nu",
+          "normalized": "rate_with_gst_nu"
+        },
+        {
+          "original": "validity",
+          "normalized": "validity"
+        }
+      ],
+      "rows": [
+        {
+          "row_number": 1,
+          "data": {
+            "plan": "Daily Plan",
+            "rate_nu": 55,
+            "data_quota": "Unlimited",
+            "rate_with_gst_nu": 58,
+            "validity": "1 Day"
+          }
+        },
+        {
+          "row_number": 2,
+          "data": {
+            "plan": "Weekly Plan",
+            "rate_nu": 255,
+            "data_quota": "Unlimited",
+            "rate_with_gst_nu": 268,
+            "validity": "10 Days"
+          }
+        }
+      ]
+    },
+    {
+      "table_name": "mini offer",
+      "source_csv": "mini offer.csv",
+      "category": "pricing",
+      "row_count": 3,
+      "columns": [
+        {
+          "original": "Slabs",
+          "normalized": "slabs"
+        },
+        {
+          "original": "No of SMS",
+          "normalized": "no_of_sms"
+        },
+        {
+          "original": "Monthly Rental",
+          "normalized": "monthly_rental"
+        },
+        {
+          "original": "Unit",
+          "normalized": "unit"
+        },
+        {
+          "original": "Charges per additional SMS",
+          "normalized": "charges_per_additional_sms"
+        }
+      ],
+      "rows": [
+        {
+          "row_number": 1,
+          "data": {
+            "slabs": "Slab 1",
+            "no_of_sms": 5000,
+            "monthly_rental": 1000,
+            "unit": 0.2,
+            "charges_per_additional_sms": 0.23
+          }
+        },
+        {
+          "row_number": 2,
+          "data": {
+            "slabs": "Slab 2",
+            "no_of_sms": 10000,
+            "monthly_rental": 2000,
+            "unit": 0.2,
+            "charges_per_additional_sms": 0.22
+          }
+        },
+        {
+          "row_number": 3,
+          "data": {
+            "slabs": "Slab 3",
+            "no_of_sms": 15000,
+            "monthly_rental": 3000,
+            "unit": 0.2,
+            "charges_per_additional_sms": 0.21
+          }
+        }
+      ]
+    },
+    {
+      "table_name": "One-Time Bulk SMS",
+      "source_csv": "One-Time Bulk SMS.csv",
+      "category": "pricing",
+      "row_count": 4,
+      "columns": [
+        {
+          "original": "Subscribers",
+          "normalized": "subscribers"
+        },
+        {
+          "original": "SMS Rate",
+          "normalized": "sms_rate"
+        },
+        {
+          "original": "Total",
+          "normalized": "total"
+        },
+        {
+          "original": "Remarks",
+          "normalized": "remarks"
+        }
+      ],
+      "rows": [
+        {
+          "row_number": 1,
+          "data": {
+            "subscribers": "Up to 5000",
+            "sms_rate": 0.2,
+            "total": 1000,
+            "remarks": "Flat/Minimum"
+          }
+        },
+        {
+          "row_number": 2,
+          "data": {
+            "subscribers": "Up to 100000",
+            "sms_rate": 0.15,
+            "total": null,
+            "remarks": null
+          }
+        },
+        {
+          "row_number": 3,
+          "data": {
+            "subscribers": "Above 200000",
+            "sms_rate": 0.1,
+            "total": null,
+            "remarks": null
+          }
+        },
+        {
+          "row_number": 4,
+          "data": {
+            "subscribers": "Entire network",
+            "sms_rate": null,
+            "total": null,
+            "remarks": 30000
+          }
+        }
+      ]
+    },
+    {
+      "table_name": "Packages(Corporate Offer)",
+      "source_csv": "Packages(Corporate Offer).csv",
+      "category": "pricing",
+      "row_count": 4,
+      "columns": [
+        {
+          "original": "Slabs",
+          "normalized": "slabs"
+        },
+        {
+          "original": "No. of SMS",
+          "normalized": "no_of_sms"
+        },
+        {
+          "original": "Monthly Rental",
+          "normalized": "monthly_rental"
+        },
+        {
+          "original": "Unit",
+          "normalized": "unit"
+        },
+        {
+          "original": "Charges per additional SMS",
+          "normalized": "charges_per_additional_sms"
+        }
+      ],
+      "rows": [
+        {
+          "row_number": 1,
+          "data": {
+            "slabs": "Slab 4",
+            "no_of_sms": "Up to 20,000 SMS per month",
+            "monthly_rental": "4000 per month",
+            "unit": null,
+            "charges_per_additional_sms": null
+          }
+        },
+        {
+          "row_number": 2,
+          "data": {
+            "slabs": "Slab 5",
+            "no_of_sms": "20001 to 50000 SMS",
+            "monthly_rental": null,
+            "unit": null,
+            "charges_per_additional_sms": 0.2
+          }
+        },
+        {
+          "row_number": 3,
+          "data": {
+            "slabs": "Slab 6",
+            "no_of_sms": "50001 to 100000 SMS",
+            "monthly_rental": null,
+            "unit": null,
+            "charges_per_additional_sms": 0.15
+          }
+        },
+        {
+          "row_number": 4,
+          "data": {
+            "slabs": "Slab 7",
+            "no_of_sms": "More than 100000",
+            "monthly_rental": null,
+            "unit": null,
+            "charges_per_additional_sms": 0.1
+          }
+        }
+      ]
+    },
+    {
+      "table_name": "Postpaid Broadband Plan",
+      "source_csv": "Postpaid Broadband Plan.csv",
+      "category": "pricing",
+      "row_count": 6,
+      "columns": [
+        {
+          "original": "Packages",
+          "normalized": "packages"
+        },
+        {
+          "original": "Existing data quota",
+          "normalized": "existing_data_quota"
+        },
+        {
+          "original": "New data quota",
+          "normalized": "new_data_quota"
+        },
+        {
+          "original": "Additional Charge Per MB",
+          "normalized": "additional_charge_per_mb"
+        }
+      ],
+      "rows": [
+        {
+          "row_number": 1,
+          "data": {
+            "packages": "BB 499",
+            "existing_data_quota": "9,216 MB",
+            "new_data_quota": "13,824 MB",
+            "additional_charge_per_mb": 0.054
+          }
+        },
+        {
+          "row_number": 2,
+          "data": {
+            "packages": "BB 799",
+            "existing_data_quota": "19,456 MB",
+            "new_data_quota": "29,184 MB",
+            "additional_charge_per_mb": 0.041
+          }
+        },
+        {
+          "row_number": 3,
+          "data": {
+            "packages": "BB 1199",
+            "existing_data_quota": "33,792 MB",
+            "new_data_quota": "50,688 MB",
+            "additional_charge_per_mb": 0.035
+          }
+        },
+        {
+          "row_number": 4,
+          "data": {
+            "packages": "BB 1599",
+            "existing_data_quota": "46,080 MB",
+            "new_data_quota": "69,120 MB",
+            "additional_charge_per_mb": 0.035
+          }
+        },
+        {
+          "row_number": 5,
+          "data": {
+            "packages": "BB 2199",
+            "existing_data_quota": "66,560 MB",
+            "new_data_quota": "99,840 MB",
+            "additional_charge_per_mb": 0.033
+          }
+        },
+        {
+          "row_number": 6,
+          "data": {
+            "packages": "BB 2999",
+            "existing_data_quota": "102,400 MB",
+            "new_data_quota": "153,600 MB",
+            "additional_charge_per_mb": 0.029
+          }
+        }
+      ]
+    },
+    {
+      "table_name": "Postpaid Leased Line",
+      "source_csv": "Postpaid Leased Line.csv",
+      "category": "pricing",
+      "row_count": 8,
+      "columns": [
+        {
+          "original": "Bandwidth (Mpbs)",
+          "normalized": "bandwidth_mpbs"
+        },
+        {
+          "original": "Unit Rate (Nu.)",
+          "normalized": "unit_rate_nu"
+        },
+        {
+          "original": "Unit Rate with GST",
+          "normalized": "unit_rate_with_gst"
+        },
+        {
+          "original": "Validity (From Date of Recharge)",
+          "normalized": "validity_from_date_of_recharge"
+        },
+        {
+          "original": "Remarks",
+          "normalized": "remarks"
+        }
+      ],
+      "rows": [
+        {
+          "row_number": 1,
+          "data": {
+            "bandwidth_mpbs": "20 Mbps",
+            "unit_rate_nu": 7500,
+            "unit_rate_with_gst": 7875,
+            "validity_from_date_of_recharge": "30 Days",
+            "remarks": "Unlimited"
+          }
+        },
+        {
+          "row_number": 2,
+          "data": {
+            "bandwidth_mpbs": "25 Mbps",
+            "unit_rate_nu": 9250,
+            "unit_rate_with_gst": 9713,
+            "validity_from_date_of_recharge": null,
+            "remarks": null
+          }
+        },
+        {
+          "row_number": 3,
+          "data": {
+            "bandwidth_mpbs": "30 Mbps",
+            "unit_rate_nu": 10950,
+            "unit_rate_with_gst": 11498,
+            "validity_from_date_of_recharge": null,
+            "remarks": null
+          }
+        },
+        {
+          "row_number": 4,
+          "data": {
+            "bandwidth_mpbs": "40 Mbps",
+            "unit_rate_nu": 14200,
+            "unit_rate_with_gst": 14910,
+            "validity_from_date_of_recharge": null,
+            "remarks": null
+          }
+        },
+        {
+          "row_number": 5,
+          "data": {
+            "bandwidth_mpbs": "50 Mbps",
+            "unit_rate_nu": 17250,
+            "unit_rate_with_gst": 18113,
+            "validity_from_date_of_recharge": null,
+            "remarks": null
+          }
+        },
+        {
+          "row_number": 6,
+          "data": {
+            "bandwidth_mpbs": "75 Mbps",
+            "unit_rate_nu": 24000,
+            "unit_rate_with_gst": 25200,
+            "validity_from_date_of_recharge": null,
+            "remarks": null
+          }
+        },
+        {
+          "row_number": 7,
+          "data": {
+            "bandwidth_mpbs": "100 Mbps",
+            "unit_rate_nu": 29500,
+            "unit_rate_with_gst": 30975,
+            "validity_from_date_of_recharge": null,
+            "remarks": null
+          }
+        },
+        {
+          "row_number": 8,
+          "data": {
+            "bandwidth_mpbs": ">100 Mbps",
+            "unit_rate_nu": "285/Mbps",
+            "unit_rate_with_gst": null,
+            "validity_from_date_of_recharge": null,
+            "remarks": null
+          }
+        }
+      ]
+    },
+    {
+      "table_name": "postpaid_data_plans",
+      "source_csv": "postpaid_data_plans.csv",
+      "category": "pricing",
+      "row_count": 11,
+      "columns": [
+        {
+          "original": "package",
+          "normalized": "package"
+        },
+        {
+          "original": "rate_nu",
+          "normalized": "rate_nu"
+        },
+        {
+          "original": "data_mb",
+          "normalized": "data_mb"
+        },
+        {
+          "original": "validity",
+          "normalized": "validity"
+        }
+      ],
+      "rows": [
+        {
+          "row_number": 1,
+          "data": {
+            "package": "Monthly 199",
+            "rate_nu": 199,
+            "data_mb": 2790,
+            "validity": "Billing Cycle"
+          }
+        },
+        {
+          "row_number": 2,
+          "data": {
+            "package": "Monthly 299",
+            "rate_nu": 299,
+            "data_mb": 4610,
+            "validity": "Billing Cycle"
+          }
+        },
+        {
+          "row_number": 3,
+          "data": {
+            "package": "Monthly 499",
+            "rate_nu": 499,
+            "data_mb": 8460,
+            "validity": "Billing Cycle"
+          }
+        },
+        {
+          "row_number": 4,
+          "data": {
+            "package": "Monthly 699",
+            "rate_nu": 699,
+            "data_mb": 22930,
+            "validity": "Billing Cycle"
+          }
+        },
+        {
+          "row_number": 5,
+          "data": {
+            "package": "Monthly 799",
+            "rate_nu": 799,
+            "data_mb": 27380,
+            "validity": "Billing Cycle"
+          }
+        },
+        {
+          "row_number": 6,
+          "data": {
+            "package": "Monthly 1099",
+            "rate_nu": 1099,
+            "data_mb": 42360,
+            "validity": "Billing Cycle"
+          }
+        },
+        {
+          "row_number": 7,
+          "data": {
+            "package": "Monthly 1199",
+            "rate_nu": 1199,
+            "data_mb": 49960,
+            "validity": "Billing Cycle"
+          }
+        },
+        {
+          "row_number": 8,
+          "data": {
+            "package": "Monthly 1599",
+            "rate_nu": 1599,
+            "data_mb": 66630,
+            "validity": "Billing Cycle"
+          }
+        },
+        {
+          "row_number": 9,
+          "data": {
+            "package": "Monthly 2499",
+            "rate_nu": 2499,
+            "data_mb": 128000,
+            "validity": "Billing Cycle"
+          }
+        },
+        {
+          "row_number": 10,
+          "data": {
+            "package": "Monthly 2999",
+            "rate_nu": 2999,
+            "data_mb": 163840,
+            "validity": "Billing Cycle"
+          }
+        },
+        {
+          "row_number": 11,
+          "data": {
+            "package": "Monthly 3999",
+            "rate_nu": 3999,
+            "data_mb": 225280,
+            "validity": "Billing Cycle"
+          }
+        }
+      ]
+    },
+    {
+      "table_name": "Prepaid Broadband Plan",
+      "source_csv": "Prepaid Broadband Plan.csv",
+      "category": "pricing",
+      "row_count": 6,
+      "columns": [
+        {
+          "original": "Packages",
+          "normalized": "packages"
+        },
+        {
+          "original": "Data Quota (MB)",
+          "normalized": "data_quota_mb"
+        },
+        {
+          "original": "Data Quota with GST (MB)",
+          "normalized": "data_quota_with_gst_mb"
+        }
+      ],
+      "rows": [
+        {
+          "row_number": 1,
+          "data": {
+            "packages": "BB 399",
+            "data_quota_mb": 12288,
+            "data_quota_with_gst_mb": 11703
+          }
+        },
+        {
+          "row_number": 2,
+          "data": {
+            "packages": "BB 599",
+            "data_quota_mb": 23040,
+            "data_quota_with_gst_mb": 21943
+          }
+        },
+        {
+          "row_number": 3,
+          "data": {
+            "packages": "BB 1099",
+            "data_quota_mb": 49152,
+            "data_quota_with_gst_mb": 46811
+          }
+        },
+        {
+          "row_number": 4,
+          "data": {
+            "packages": "BB 1499",
+            "data_quota_mb": 69120,
+            "data_quota_with_gst_mb": 65829
+          }
+        },
+        {
+          "row_number": 5,
+          "data": {
+            "packages": "BB 1999",
+            "data_quota_mb": 95232,
+            "data_quota_with_gst_mb": 90697
+          }
+        },
+        {
+          "row_number": 6,
+          "data": {
+            "packages": "BB 2499",
+            "data_quota_mb": 122880,
+            "data_quota_with_gst_mb": 117029
+          }
+        }
+      ]
+    },
+    {
+      "table_name": "Prepaid Leased Line",
+      "source_csv": "Prepaid Leased Line.csv",
+      "category": "pricing",
+      "row_count": 11,
+      "columns": [
+        {
+          "original": "Bandwidth (Mpbs)",
+          "normalized": "bandwidth_mpbs"
+        },
+        {
+          "original": "Unit Rate (Nu.)",
+          "normalized": "unit_rate_nu"
+        },
+        {
+          "original": "Unit Rate with GST",
+          "normalized": "unit_rate_with_gst"
+        },
+        {
+          "original": "Validity (From Date of Recharge)",
+          "normalized": "validity_from_date_of_recharge"
+        },
+        {
+          "original": "Remarks",
+          "normalized": "remarks"
+        }
+      ],
+      "rows": [
+        {
+          "row_number": 1,
+          "data": {
+            "bandwidth_mpbs": "5 Mbps",
+            "unit_rate_nu": 1950,
+            "unit_rate_with_gst": 2048,
+            "validity_from_date_of_recharge": "30 Days",
+            "remarks": "Unlimited"
+          }
+        },
+        {
+          "row_number": 2,
+          "data": {
+            "bandwidth_mpbs": "10 Mbps",
+            "unit_rate_nu": 3850,
+            "unit_rate_with_gst": 4043,
+            "validity_from_date_of_recharge": null,
+            "remarks": null
+          }
+        },
+        {
+          "row_number": 3,
+          "data": {
+            "bandwidth_mpbs": "15 Mbps",
+            "unit_rate_nu": 5700,
+            "unit_rate_with_gst": 5985,
+            "validity_from_date_of_recharge": null,
+            "remarks": null
+          }
+        },
+        {
+          "row_number": 4,
+          "data": {
+            "bandwidth_mpbs": "20 Mbps",
+            "unit_rate_nu": 7500,
+            "unit_rate_with_gst": 7875,
+            "validity_from_date_of_recharge": null,
+            "remarks": null
+          }
+        },
+        {
+          "row_number": 5,
+          "data": {
+            "bandwidth_mpbs": "25 Mbps",
+            "unit_rate_nu": 9250,
+            "unit_rate_with_gst": 9713,
+            "validity_from_date_of_recharge": null,
+            "remarks": null
+          }
+        },
+        {
+          "row_number": 6,
+          "data": {
+            "bandwidth_mpbs": "30 Mbps",
+            "unit_rate_nu": 10950,
+            "unit_rate_with_gst": 11498,
+            "validity_from_date_of_recharge": null,
+            "remarks": null
+          }
+        },
+        {
+          "row_number": 7,
+          "data": {
+            "bandwidth_mpbs": "40 Mbps",
+            "unit_rate_nu": 14200,
+            "unit_rate_with_gst": 14910,
+            "validity_from_date_of_recharge": null,
+            "remarks": null
+          }
+        },
+        {
+          "row_number": 8,
+          "data": {
+            "bandwidth_mpbs": "50 Mbps",
+            "unit_rate_nu": 17250,
+            "unit_rate_with_gst": 18113,
+            "validity_from_date_of_recharge": null,
+            "remarks": null
+          }
+        },
+        {
+          "row_number": 9,
+          "data": {
+            "bandwidth_mpbs": "75 Mbps",
+            "unit_rate_nu": 24000,
+            "unit_rate_with_gst": 25200,
+            "validity_from_date_of_recharge": null,
+            "remarks": null
+          }
+        },
+        {
+          "row_number": 10,
+          "data": {
+            "bandwidth_mpbs": "100 Mbps",
+            "unit_rate_nu": 29500,
+            "unit_rate_with_gst": 30975,
+            "validity_from_date_of_recharge": null,
+            "remarks": null
+          }
+        },
+        {
+          "row_number": 11,
+          "data": {
+            "bandwidth_mpbs": ">100 Mbps",
+            "unit_rate_nu": "285/Mbps (exclusive of GST)",
+            "unit_rate_with_gst": null,
+            "validity_from_date_of_recharge": null,
+            "remarks": null
+          }
+        }
+      ]
+    },
+    {
+      "table_name": "prepaid_data_plans",
+      "source_csv": "prepaid_data_plans.csv",
+      "category": "pricing",
+      "row_count": 17,
+      "columns": [
+        {
+          "original": "plan",
+          "normalized": "plan"
+        },
+        {
+          "original": "data_volume_mb",
+          "normalized": "data_volume_mb"
+        },
+        {
+          "original": "data_volume_with_gst_mb",
+          "normalized": "data_volume_with_gst_mb"
+        },
+        {
+          "original": "validity",
+          "normalized": "validity"
+        }
+      ],
+      "rows": [
+        {
+          "row_number": 1,
+          "data": {
+            "plan": "Daily 19",
+            "data_volume_mb": 260,
+            "data_volume_with_gst_mb": 248,
+            "validity": "One Day"
+          }
+        },
+        {
+          "row_number": 2,
+          "data": {
+            "plan": "Daily 29",
+            "data_volume_mb": 410,
+            "data_volume_with_gst_mb": 390,
+            "validity": "One Day"
+          }
+        },
+        {
+          "row_number": 3,
+          "data": {
+            "plan": "Weekly 39",
+            "data_volume_mb": 520,
+            "data_volume_with_gst_mb": 495,
+            "validity": "7 Days"
+          }
+        },
+        {
+          "row_number": 4,
+          "data": {
+            "plan": "Weekly 49",
+            "data_volume_mb": 660,
+            "data_volume_with_gst_mb": 629,
+            "validity": "7 Days"
+          }
+        },
+        {
+          "row_number": 5,
+          "data": {
+            "plan": "Monthly Lite 99",
+            "data_volume_mb": 1330,
+            "data_volume_with_gst_mb": 1267,
+            "validity": "30 Days"
+          }
+        },
+        {
+          "row_number": 6,
+          "data": {
+            "plan": "Monthly Lite 199",
+            "data_volume_mb": 2765,
+            "data_volume_with_gst_mb": 2633,
+            "validity": "30 Days"
+          }
+        },
+        {
+          "row_number": 7,
+          "data": {
+            "plan": "Monthly Lite 299",
+            "data_volume_mb": 4608,
+            "data_volume_with_gst_mb": 4389,
+            "validity": "30 Days"
+          }
+        },
+        {
+          "row_number": 8,
+          "data": {
+            "plan": "Monthly Lite 499",
+            "data_volume_mb": 8499,
+            "data_volume_with_gst_mb": 8094,
+            "validity": "30 Days"
+          }
+        },
+        {
+          "row_number": 9,
+          "data": {
+            "plan": "Monthly Max 699",
+            "data_volume_mb": 22938,
+            "data_volume_with_gst_mb": 21845,
+            "validity": "30 Days"
+          }
+        },
+        {
+          "row_number": 10,
+          "data": {
+            "plan": "Monthly Max 799",
+            "data_volume_mb": 27034,
+            "data_volume_with_gst_mb": 25746,
+            "validity": "30 Days"
+          }
+        },
+        {
+          "row_number": 11,
+          "data": {
+            "plan": "Monthly Max 999",
+            "data_volume_mb": 37570,
+            "data_volume_with_gst_mb": 35781,
+            "validity": "30 Days"
+          }
+        },
+        {
+          "row_number": 12,
+          "data": {
+            "plan": "Monthly Max 1099",
+            "data_volume_mb": 42363,
+            "data_volume_with_gst_mb": 40346,
+            "validity": "30 Days"
+          }
+        },
+        {
+          "row_number": 13,
+          "data": {
+            "plan": "Monthly Max 1199",
+            "data_volume_mb": 48730,
+            "data_volume_with_gst_mb": 46410,
+            "validity": "30 Days"
+          }
+        },
+        {
+          "row_number": 14,
+          "data": {
+            "plan": "Monthly Max 1599",
+            "data_volume_mb": 66560,
+            "data_volume_with_gst_mb": 63390,
+            "validity": "30 Days"
+          }
+        },
+        {
+          "row_number": 15,
+          "data": {
+            "plan": "Monthly Max 2499",
+            "data_volume_mb": 128000,
+            "data_volume_with_gst_mb": 121905,
+            "validity": "30 Days"
+          }
+        },
+        {
+          "row_number": 16,
+          "data": {
+            "plan": "Monthly Max 2999",
+            "data_volume_mb": 163840,
+            "data_volume_with_gst_mb": 156038,
+            "validity": "30 Days"
+          }
+        },
+        {
+          "row_number": 17,
+          "data": {
+            "plan": "Monthly Max 3999",
+            "data_volume_mb": 225280,
+            "data_volume_with_gst_mb": 214552,
+            "validity": "30 Days"
+          }
+        }
+      ]
+    },
+    {
+      "table_name": "recharge_vouchers",
+      "source_csv": "recharge_vouchers.csv",
+      "category": "pricing",
+      "row_count": 6,
+      "columns": [
+        {
+          "original": "denomination",
+          "normalized": "denomination"
+        },
+        {
+          "original": "call_value",
+          "normalized": "call_value"
+        },
+        {
+          "original": "validity",
+          "normalized": "validity"
+        }
+      ],
+      "rows": [
+        {
+          "row_number": 1,
+          "data": {
+            "denomination": "Nu. 25",
+            "call_value": "Nu. 25",
+            "validity": "15 days"
+          }
+        },
+        {
+          "row_number": 2,
+          "data": {
+            "denomination": "Nu. 50",
+            "call_value": "Nu. 50",
+            "validity": "22 days"
+          }
+        },
+        {
+          "row_number": 3,
+          "data": {
+            "denomination": "Nu. 100",
+            "call_value": "Nu. 100",
+            "validity": "37 days"
+          }
+        },
+        {
+          "row_number": 4,
+          "data": {
+            "denomination": "Nu. 200",
+            "call_value": "Nu. 200",
+            "validity": "37 days"
+          }
+        },
+        {
+          "row_number": 5,
+          "data": {
+            "denomination": "Nu. 300",
+            "call_value": "Nu. 300",
+            "validity": "37 days"
+          }
+        },
+        {
+          "row_number": 6,
+          "data": {
+            "denomination": "Nu. 500",
+            "call_value": "Nu. 500",
+            "validity": "60 days"
+          }
+        }
+      ]
+    },
+    {
+      "table_name": "roaming standard(Iot)tariff",
+      "source_csv": "roaming standard(Iot)tariff.csv",
+      "category": "pricing",
+      "row_count": 3,
+      "columns": [
+        {
+          "original": "Outgoing (MOC) Incoming (MTC) Data",
+          "normalized": "outgoing_moc_incoming_mtc_data"
+        }
+      ],
+      "rows": [
+        {
+          "row_number": 1,
+          "data": {
+            "outgoing_moc_incoming_mtc_data": "Back Home Local International SMS-MO Voice SMS-MT"
+          }
+        },
+        {
+          "row_number": 2,
+          "data": {
+            "outgoing_moc_incoming_mtc_data": "Per Minute Per Minute Per Minute Per Minute Per MB Increment"
+          }
+        },
+        {
+          "row_number": 3,
+          "data": {
+            "outgoing_moc_incoming_mtc_data": "99.00 60.00 99.00 15.00 60.00 0.00 512.00 10 Kb"
+          }
+        }
+      ]
+    },
+    {
+      "table_name": "Samsung",
+      "source_csv": "Samsung.csv",
+      "category": "device_sales",
+      "row_count": 34,
+      "columns": [
+        {
+          "original": "Sl.No",
+          "normalized": "sl_no"
+        },
+        {
+          "original": "Items Name",
+          "normalized": "items_name"
+        },
+        {
+          "original": "Western Region",
+          "normalized": "western_region"
+        },
+        {
+          "original": "Eastern Region",
+          "normalized": "eastern_region"
+        },
+        {
+          "original": "Central Region",
+          "normalized": "central_region"
+        },
+        {
+          "original": "South Western Region",
+          "normalized": "south_western_region"
+        },
+        {
+          "original": "Grand Total",
+          "normalized": "grand_total"
+        },
+        {
+          "original": "Selling Price",
+          "normalized": "selling_price"
+        }
+      ],
+      "rows": [
+        {
+          "row_number": 1,
+          "data": {
+            "sl_no": 1,
+            "items_name": "Samsung 45W Adapter",
+            "western_region": 5,
+            "eastern_region": 0,
+            "central_region": 0,
+            "south_western_region": 0,
+            "grand_total": 5,
+            "selling_price": 3050
+          }
+        },
+        {
+          "row_number": 2,
+          "data": {
+            "sl_no": 2,
+            "items_name": "SAMSUNG PHONE-A55 5G (8+256) 5G",
+            "western_region": 0,
+            "eastern_region": 0,
+            "central_region": 0,
+            "south_western_region": 0,
+            "grand_total": 0,
+            "selling_price": null
+          }
+        },
+        {
+          "row_number": 3,
+          "data": {
+            "sl_no": 3,
+            "items_name": "Samsung Galaxy A06 (4+128)",
+            "western_region": 0,
+            "eastern_region": 1,
+            "central_region": 1,
+            "south_western_region": 0,
+            "grand_total": 2,
+            "selling_price": 9599
+          }
+        },
+        {
+          "row_number": 4,
+          "data": {
+            "sl_no": 4,
+            "items_name": "Samsung Galaxy A06 (4+64)",
+            "western_region": 3,
+            "eastern_region": 3,
+            "central_region": 1,
+            "south_western_region": 0,
+            "grand_total": 7,
+            "selling_price": 8599
+          }
+        },
+        {
+          "row_number": 5,
+          "data": {
+            "sl_no": 5,
+            "items_name": "Samsung Galaxy A06 (6+128)",
+            "western_region": 0,
+            "eastern_region": 0,
+            "central_region": 0,
+            "south_western_region": 0,
+            "grand_total": 0,
+            "selling_price": null
+          }
+        },
+        {
+          "row_number": 6,
+          "data": {
+            "sl_no": 6,
+            "items_name": "Samsung Galaxy A16 5G ( 8+128)",
+            "western_region": 0,
+            "eastern_region": 2,
+            "central_region": 0,
+            "south_western_region": 0,
+            "grand_total": 2,
+            "selling_price": 15899
+          }
+        },
+        {
+          "row_number": 7,
+          "data": {
+            "sl_no": 7,
+            "items_name": "Samsung Galaxy A16 5G (6+128)",
+            "western_region": 0,
+            "eastern_region": 0,
+            "central_region": 0,
+            "south_western_region": 0,
+            "grand_total": 0,
+            "selling_price": null
+          }
+        },
+        {
+          "row_number": 8,
+          "data": {
+            "sl_no": 8,
+            "items_name": "Samsung Galaxy A16 5G (8+256)",
+            "western_region": 0,
+            "eastern_region": 2,
+            "central_region": 0,
+            "south_western_region": 0,
+            "grand_total": 2,
+            "selling_price": 18199
+          }
+        },
+        {
+          "row_number": 9,
+          "data": {
+            "sl_no": 9,
+            "items_name": "Samsung Galaxy A26 5G (8+256)",
+            "western_region": 0,
+            "eastern_region": 0,
+            "central_region": 0,
+            "south_western_region": 0,
+            "grand_total": 0,
+            "selling_price": null
+          }
+        },
+        {
+          "row_number": 10,
+          "data": {
+            "sl_no": 10,
+            "items_name": "Samsung Galaxy A56 5G (8+256)",
+            "western_region": 7,
+            "eastern_region": 1,
+            "central_region": 2,
+            "south_western_region": 3,
+            "grand_total": 13,
+            "selling_price": 33409
+          }
+        },
+        {
+          "row_number": 11,
+          "data": {
+            "sl_no": 11,
+            "items_name": "Samsung Galaxy A56 5G (12+256)",
+            "western_region": 12,
+            "eastern_region": 2,
+            "central_region": 4,
+            "south_western_region": 2,
+            "grand_total": 20,
+            "selling_price": 37749
+          }
+        },
+        {
+          "row_number": 12,
+          "data": {
+            "sl_no": 12,
+            "items_name": "Samsung Galaxy S25 Ultra 5G (12+512)",
+            "western_region": 7,
+            "eastern_region": 0,
+            "central_region": 3,
+            "south_western_region": 3,
+            "grand_total": 13,
+            "selling_price": 118584
+          }
+        },
+        {
+          "row_number": 13,
+          "data": {
+            "sl_no": 13,
+            "items_name": "SAMSUNG PHONE -A15 5G(6+128)",
+            "western_region": 0,
+            "eastern_region": 0,
+            "central_region": 0,
+            "south_western_region": 0,
+            "grand_total": 0,
+            "selling_price": null
+          }
+        },
+        {
+          "row_number": 14,
+          "data": {
+            "sl_no": 14,
+            "items_name": "Samsung Phone M14 (6+128)",
+            "western_region": 0,
+            "eastern_region": 0,
+            "central_region": 0,
+            "south_western_region": 0,
+            "grand_total": 0,
+            "selling_price": null
+          }
+        },
+        {
+          "row_number": 15,
+          "data": {
+            "sl_no": 15,
+            "items_name": "Samsung Phone M15 5G (6+128)",
+            "western_region": 0,
+            "eastern_region": 3,
+            "central_region": 0,
+            "south_western_region": 0,
+            "grand_total": 3,
+            "selling_price": 13399
+          }
+        },
+        {
+          "row_number": 16,
+          "data": {
+            "sl_no": 16,
+            "items_name": "SAMSUNG PHONE-A05 (4+64)",
+            "western_region": 0,
+            "eastern_region": 1,
+            "central_region": 1,
+            "south_western_region": 1,
+            "grand_total": 3,
+            "selling_price": 8699
+          }
+        },
+        {
+          "row_number": 17,
+          "data": {
+            "sl_no": 17,
+            "items_name": "SAMSUNG PHONE-A05 (6+128)",
+            "western_region": 0,
+            "eastern_region": 1,
+            "central_region": 0,
+            "south_western_region": 0,
+            "grand_total": 1,
+            "selling_price": 10899
+          }
+        },
+        {
+          "row_number": 18,
+          "data": {
+            "sl_no": 18,
+            "items_name": "SAMSUNG PHONE-A55 5G (12+256) 5G",
+            "western_region": 0,
+            "eastern_region": 0,
+            "central_region": 0,
+            "south_western_region": 0,
+            "grand_total": 0,
+            "selling_price": null
+          }
+        },
+        {
+          "row_number": 19,
+          "data": {
+            "sl_no": 19,
+            "items_name": "Samsung Galaxy A36 5G (8+256)",
+            "western_region": 0,
+            "eastern_region": 0,
+            "central_region": 0,
+            "south_western_region": 0,
+            "grand_total": 0,
+            "selling_price": null
+          }
+        },
+        {
+          "row_number": 20,
+          "data": {
+            "sl_no": 20,
+            "items_name": "Samsung Galaxy A36 5G (8+128)",
+            "western_region": 2,
+            "eastern_region": 3,
+            "central_region": 2,
+            "south_western_region": 0,
+            "grand_total": 7,
+            "selling_price": 26019
+          }
+        },
+        {
+          "row_number": 21,
+          "data": {
+            "sl_no": 21,
+            "items_name": "Samsung Galaxy A07(4+64)",
+            "western_region": 9,
+            "eastern_region": 12,
+            "central_region": 4,
+            "south_western_region": 5,
+            "grand_total": 30,
+            "selling_price": 8949
+          }
+        },
+        {
+          "row_number": 22,
+          "data": {
+            "sl_no": 22,
+            "items_name": "Samsung Galaxy A07(6+128)",
+            "western_region": 17,
+            "eastern_region": 8,
+            "central_region": 4,
+            "south_western_region": 8,
+            "grand_total": 37,
+            "selling_price": 11228
+          }
+        },
+        {
+          "row_number": 23,
+          "data": {
+            "sl_no": 23,
+            "items_name": "Samsung Galaxy A07(4+128)",
+            "western_region": 9,
+            "eastern_region": 6,
+            "central_region": 2,
+            "south_western_region": 4,
+            "grand_total": 21,
+            "selling_price": 10089
+          }
+        },
+        {
+          "row_number": 24,
+          "data": {
+            "sl_no": 24,
+            "items_name": "Samsung Galaxy A17 5G(6+128)",
+            "western_region": 4,
+            "eastern_region": 6,
+            "central_region": 3,
+            "south_western_region": 2,
+            "grand_total": 15,
+            "selling_price": 15500
+          }
+        },
+        {
+          "row_number": 25,
+          "data": {
+            "sl_no": 25,
+            "items_name": "Samsung Galaxy A17 5G(8+128)",
+            "western_region": 16,
+            "eastern_region": 9,
+            "central_region": 11,
+            "south_western_region": 7,
+            "grand_total": 43,
+            "selling_price": 16640
+          }
+        },
+        {
+          "row_number": 26,
+          "data": {
+            "sl_no": 26,
+            "items_name": "Samsung Galaxy A17 5G(8+256)",
+            "western_region": 23,
+            "eastern_region": 12,
+            "central_region": 7,
+            "south_western_region": 12,
+            "grand_total": 54,
+            "selling_price": 18920
+          }
+        },
+        {
+          "row_number": 27,
+          "data": {
+            "sl_no": 27,
+            "items_name": "Samsung Galaxy M16 5G(6+128)",
+            "western_region": 3,
+            "eastern_region": 1,
+            "central_region": 1,
+            "south_western_region": 1,
+            "grand_total": 6,
+            "selling_price": 14679
+          }
+        },
+        {
+          "row_number": 28,
+          "data": {
+            "sl_no": 28,
+            "items_name": "Samsung Galaxy M17 5G (4+128)",
+            "western_region": 7,
+            "eastern_region": 6,
+            "central_region": 5,
+            "south_western_region": 7,
+            "grand_total": 25,
+            "selling_price": 14299
+          }
+        },
+        {
+          "row_number": 29,
+          "data": {
+            "sl_no": 29,
+            "items_name": "Samsung Galaxy S25 Ultra 5G (12+256)",
+            "western_region": 0,
+            "eastern_region": 1,
+            "central_region": 0,
+            "south_western_region": 0,
+            "grand_total": 1,
+            "selling_price": 97918
+          }
+        },
+        {
+          "row_number": 30,
+          "data": {
+            "sl_no": 30,
+            "items_name": "Samsung Galaxy S26 (12+256) 5G",
+            "western_region": 4,
+            "eastern_region": 0,
+            "central_region": 0,
+            "south_western_region": 0,
+            "grand_total": 4,
+            "selling_price": 70447
+          }
+        },
+        {
+          "row_number": 31,
+          "data": {
+            "sl_no": 31,
+            "items_name": "Samsung Galaxy S26 Ultra (12+256) 5G",
+            "western_region": 6,
+            "eastern_region": 0,
+            "central_region": 0,
+            "south_western_region": 0,
+            "grand_total": 6,
+            "selling_price": 112170
+          }
+        },
+        {
+          "row_number": 32,
+          "data": {
+            "sl_no": 32,
+            "items_name": "Samsung Galaxy S26 Ultra (12+512) 5G",
+            "western_region": 1,
+            "eastern_region": 0,
+            "central_region": 0,
+            "south_western_region": 0,
+            "grand_total": 1,
+            "selling_price": 129046
+          }
+        },
+        {
+          "row_number": 33,
+          "data": {
+            "sl_no": 33,
+            "items_name": "Samsung Galaxy S26+ (12+256) 5G",
+            "western_region": 2,
+            "eastern_region": 0,
+            "central_region": 0,
+            "south_western_region": 0,
+            "grand_total": 2,
+            "selling_price": 96094
+          }
+        },
+        {
+          "row_number": 34,
+          "data": {
+            "sl_no": null,
+            "items_name": "Grand Total",
+            "western_region": 137,
+            "eastern_region": 80,
+            "central_region": 51,
+            "south_western_region": 55,
+            "grand_total": 318,
+            "selling_price": null
+          }
+        }
+      ]
+    },
+    {
+      "table_name": "sms_tariff",
+      "source_csv": "sms_tariff.csv",
+      "category": "pricing",
+      "row_count": 2,
+      "columns": [
+        {
+          "original": "row_type",
+          "normalized": "row_type"
+        },
+        {
+          "original": "on_net_late_night",
+          "normalized": "on_net_late_night"
+        },
+        {
+          "original": "on_net_standard",
+          "normalized": "on_net_standard"
+        },
+        {
+          "original": "off_net",
+          "normalized": "off_net"
+        }
+      ],
+      "rows": [
+        {
+          "row_number": 1,
+          "data": {
+            "row_type": "Existing Tariff",
+            "on_net_late_night": "Nu.0.10/SMS",
+            "on_net_standard": "Nu.0.40/SMS",
+            "off_net": "Nu.0.45/SMS"
+          }
+        },
+        {
+          "row_number": 2,
+          "data": {
+            "row_type": "Revised Tariff",
+            "on_net_late_night": "Nu.0.10/SMS",
+            "on_net_standard": "Nu 0.36/SMS",
+            "off_net": "Nu 0.40/SMS"
+          }
+        }
+      ]
+    },
+    {
+      "table_name": "vivo",
+      "source_csv": "vivo.csv",
+      "category": "device_sales",
+      "row_count": 22,
+      "columns": [
+        {
+          "original": "Sl.no",
+          "normalized": "sl_no"
+        },
+        {
+          "original": "Item Name",
+          "normalized": "item_name"
+        },
+        {
+          "original": "Western Region",
+          "normalized": "western_region"
+        },
+        {
+          "original": "Eastern Region",
+          "normalized": "eastern_region"
+        },
+        {
+          "original": "Central Region",
+          "normalized": "central_region"
+        },
+        {
+          "original": "Southwest Region",
+          "normalized": "southwest_region"
+        },
+        {
+          "original": "Total Sales",
+          "normalized": "total_sales"
+        },
+        {
+          "original": "Selling Price",
+          "normalized": "selling_price"
+        }
+      ],
+      "rows": [
+        {
+          "row_number": 1,
+          "data": {
+            "sl_no": 1,
+            "item_name": "VIVO PHONE- Y28(8+256G)",
+            "western_region": 0,
+            "eastern_region": 0,
+            "central_region": 0,
+            "southwest_region": 0,
+            "total_sales": 0,
+            "selling_price": null
+          }
+        },
+        {
+          "row_number": 2,
+          "data": {
+            "sl_no": 2,
+            "item_name": "VIVO PHONE-V30Lite(8+256G)_EX",
+            "western_region": 0,
+            "eastern_region": 2,
+            "central_region": 0,
+            "southwest_region": 0,
+            "total_sales": 2,
+            "selling_price": 18499
+          }
+        },
+        {
+          "row_number": 3,
+          "data": {
+            "sl_no": 3,
+            "item_name": "VIVO PHONE-Y28(8+128G)",
+            "western_region": 3,
+            "eastern_region": 2,
+            "central_region": 1,
+            "southwest_region": 0,
+            "total_sales": 6,
+            "selling_price": 12999
+          }
+        },
+        {
+          "row_number": 4,
+          "data": {
+            "sl_no": 4,
+            "item_name": "VIVO Y19s(4+128G)",
+            "western_region": 0,
+            "eastern_region": 7,
+            "central_region": 0,
+            "southwest_region": 0,
+            "total_sales": 7,
+            "selling_price": 9499
+          }
+        },
+        {
+          "row_number": 5,
+          "data": {
+            "sl_no": 5,
+            "item_name": "VIVO Y19s(6+128G)",
+            "western_region": 3,
+            "eastern_region": 4,
+            "central_region": 1,
+            "southwest_region": 0,
+            "total_sales": 8,
+            "selling_price": 10499
+          }
+        },
+        {
+          "row_number": 6,
+          "data": {
+            "sl_no": 6,
+            "item_name": "Vivo Y21 5G(6+128)",
+            "western_region": 1,
+            "eastern_region": 2,
+            "central_region": 1,
+            "southwest_region": 3,
+            "total_sales": 7,
+            "selling_price": 16189.52
+          }
+        },
+        {
+          "row_number": 7,
+          "data": {
+            "sl_no": 7,
+            "item_name": "VIVO Y29(8+128G)",
+            "western_region": 5,
+            "eastern_region": 3,
+            "central_region": 2,
+            "southwest_region": 0,
+            "total_sales": 10,
+            "selling_price": 13999
+          }
+        },
+        {
+          "row_number": 8,
+          "data": {
+            "sl_no": 8,
+            "item_name": "VIVO Y29(8+256G)",
+            "western_region": 0,
+            "eastern_region": 2,
+            "central_region": 1,
+            "southwest_region": 0,
+            "total_sales": 3,
+            "selling_price": 15499
+          }
+        },
+        {
+          "row_number": 9,
+          "data": {
+            "sl_no": 9,
+            "item_name": "VIVO V50 5G(12+256G)",
+            "western_region": 3,
+            "eastern_region": 2,
+            "central_region": 0,
+            "southwest_region": 1,
+            "total_sales": 6,
+            "selling_price": 34999
+          }
+        },
+        {
+          "row_number": 10,
+          "data": {
+            "sl_no": 10,
+            "item_name": "VIVO V50Lite 5G(12+256G)",
+            "western_region": 1,
+            "eastern_region": 1,
+            "central_region": 0,
+            "southwest_region": 0,
+            "total_sales": 2,
+            "selling_price": 23999
+          }
+        },
+        {
+          "row_number": 11,
+          "data": {
+            "sl_no": 11,
+            "item_name": "VIVO Y04(4+128G)",
+            "western_region": 52,
+            "eastern_region": 47,
+            "central_region": 50,
+            "southwest_region": 56,
+            "total_sales": 205,
+            "selling_price": 9522.86
+          }
+        },
+        {
+          "row_number": 12,
+          "data": {
+            "sl_no": 12,
+            "item_name": "VIVO Y04(4+64G)",
+            "western_region": 38,
+            "eastern_region": 36,
+            "central_region": 43,
+            "southwest_region": 34,
+            "total_sales": 151,
+            "selling_price": 8570.48
+          }
+        },
+        {
+          "row_number": 13,
+          "data": {
+            "sl_no": 13,
+            "item_name": "VIVO V50Lite 4G(8+256G)",
+            "western_region": 1,
+            "eastern_region": 1,
+            "central_region": 1,
+            "southwest_region": 0,
+            "total_sales": 3,
+            "selling_price": 18999
+          }
+        },
+        {
+          "row_number": 14,
+          "data": {
+            "sl_no": 14,
+            "item_name": "VIVO V60 5G(12+256)",
+            "western_region": 16,
+            "eastern_region": 11,
+            "central_region": 7,
+            "southwest_region": 17,
+            "total_sales": 51,
+            "selling_price": 35999
+          }
+        },
+        {
+          "row_number": 15,
+          "data": {
+            "sl_no": 15,
+            "item_name": "VIVO V60(12+512G) 5G",
+            "western_region": 10,
+            "eastern_region": 3,
+            "central_region": 1,
+            "southwest_region": 0,
+            "total_sales": 14,
+            "selling_price": 38999
+          }
+        },
+        {
+          "row_number": 16,
+          "data": {
+            "sl_no": 16,
+            "item_name": "VIVO V60Lite(12+256G) 5G",
+            "western_region": 12,
+            "eastern_region": 16,
+            "central_region": 15,
+            "southwest_region": 23,
+            "total_sales": 66,
+            "selling_price": 24999
+          }
+        },
+        {
+          "row_number": 17,
+          "data": {
+            "sl_no": 17,
+            "item_name": "Vivo x300 Pro(16+512GB( Without Camera Kit)",
+            "western_region": 2,
+            "eastern_region": 0,
+            "central_region": 0,
+            "southwest_region": 1,
+            "total_sales": 3,
+            "selling_price": 85908
+          }
+        },
+        {
+          "row_number": 18,
+          "data": {
+            "sl_no": 18,
+            "item_name": "VIVO Y29t(6+128G) 5G",
+            "western_region": 31,
+            "eastern_region": 27,
+            "central_region": 20,
+            "southwest_region": 32,
+            "total_sales": 110,
+            "selling_price": 12856.19
+          }
+        },
+        {
+          "row_number": 19,
+          "data": {
+            "sl_no": 19,
+            "item_name": "VIVO Y29t(6+256G) 5G",
+            "western_region": 33,
+            "eastern_region": 19,
+            "central_region": 27,
+            "southwest_region": 28,
+            "total_sales": 107,
+            "selling_price": 14284.76
+          }
+        },
+        {
+          "row_number": 20,
+          "data": {
+            "sl_no": 20,
+            "item_name": "Vivo Y31(8+128G)5G",
+            "western_region": 11,
+            "eastern_region": 5,
+            "central_region": 3,
+            "southwest_region": 16,
+            "total_sales": 35,
+            "selling_price": 18094.29
+          }
+        },
+        {
+          "row_number": 21,
+          "data": {
+            "sl_no": 21,
+            "item_name": "Vivo Y31(8+256G)5G",
+            "western_region": 26,
+            "eastern_region": 20,
+            "central_region": 18,
+            "southwest_region": 24,
+            "total_sales": 88,
+            "selling_price": 19999.05
+          }
+        },
+        {
+          "row_number": 22,
+          "data": {
+            "sl_no": null,
+            "item_name": "Grand Total",
+            "western_region": 248,
+            "eastern_region": 210,
+            "central_region": 191,
+            "southwest_region": 235,
+            "total_sales": 884,
+            "selling_price": null
+          }
+        }
+      ]
+    },
+    {
+      "table_name": "voice_tariff_off_net",
+      "source_csv": "voice_tariff_off_net.csv",
+      "category": "pricing",
+      "row_count": 3,
+      "columns": [
+        {
+          "original": "timing",
+          "normalized": "timing"
+        },
+        {
+          "original": "existing_tariff",
+          "normalized": "existing_tariff"
+        },
+        {
+          "original": "revised_tariff",
+          "normalized": "revised_tariff"
+        }
+      ],
+      "rows": [
+        {
+          "row_number": 1,
+          "data": {
+            "timing": "6AM – 3PM (Off-Peak Hour)",
+            "existing_tariff": "Nu. 0.35/unit",
+            "revised_tariff": "Nu.0.31/unit"
+          }
+        },
+        {
+          "row_number": 2,
+          "data": {
+            "timing": "3PM – 10 PM (Peak Hour)",
+            "existing_tariff": "Nu. 0.45/unit",
+            "revised_tariff": "Nu.0.40/unit"
+          }
+        },
+        {
+          "row_number": 3,
+          "data": {
+            "timing": "10 PM – 6 AM (Economy Hour)",
+            "existing_tariff": "Nu. 0.35/unit",
+            "revised_tariff": "Nu 0.31/unit"
+          }
+        }
+      ]
+    },
+    {
+      "table_name": "voice_tariff_on_net",
+      "source_csv": "voice_tariff_on_net.csv",
+      "category": "pricing",
+      "row_count": 4,
+      "columns": [
+        {
+          "original": "timing",
+          "normalized": "timing"
+        },
+        {
+          "original": "existing_tariff",
+          "normalized": "existing_tariff"
+        },
+        {
+          "original": "revised_tariff",
+          "normalized": "revised_tariff"
+        }
+      ],
+      "rows": [
+        {
+          "row_number": 1,
+          "data": {
+            "timing": "6AM – 3PM (Off-Peak Hour)",
+            "existing_tariff": "Nu. 0.35/unit",
+            "revised_tariff": "Nu.0.31/unit"
+          }
+        },
+        {
+          "row_number": 2,
+          "data": {
+            "timing": "3PM – 10 PM (Peak Hour)",
+            "existing_tariff": "Nu.0.45/unit",
+            "revised_tariff": "Nu.0.40/unit"
+          }
+        },
+        {
+          "row_number": 3,
+          "data": {
+            "timing": "10 PM – 6 AM (Economy Hour)",
+            "existing_tariff": "Nu. 0.25/unit",
+            "revised_tariff": "Nu 0.22/unit"
+          }
+        },
+        {
+          "row_number": 4,
+          "data": {
+            "timing": "12 AM – 4 AM (Late night)",
+            "existing_tariff": "Nu. 0.10/unit",
+            "revised_tariff": "Nu.0.10/unit"
+          }
+        }
+      ]
+    },
+    {
+      "table_name": "weekend_plans",
+      "source_csv": "weekend_plans.csv",
+      "category": "pricing",
+      "row_count": 1,
+      "columns": [
+        {
+          "original": "plan_price_nu",
+          "normalized": "plan_price_nu"
+        },
+        {
+          "original": "validity",
+          "normalized": "validity"
+        },
+        {
+          "original": "data_quota_mb",
+          "normalized": "data_quota_mb"
+        },
+        {
+          "original": "data_quota_with_gst_mb",
+          "normalized": "data_quota_with_gst_mb"
+        }
+      ],
+      "rows": [
+        {
+          "row_number": 1,
+          "data": {
+            "plan_price_nu": 220,
+            "validity": "Four weekends",
+            "data_quota_mb": 4510,
+            "data_quota_with_gst_mb": 4295
+          }
+        }
+      ]
+    },
+    {
+      "table_name": "xiaomi",
+      "source_csv": "xiaomi.csv",
+      "category": "device_sales",
+      "row_count": 36,
+      "columns": [
+        {
+          "original": "Sl.No",
+          "normalized": "sl_no"
+        },
+        {
+          "original": "Item Name",
+          "normalized": "item_name"
+        },
+        {
+          "original": "Western Region",
+          "normalized": "western_region"
+        },
+        {
+          "original": "Eastern Region",
+          "normalized": "eastern_region"
+        },
+        {
+          "original": "Central Region",
+          "normalized": "central_region"
+        },
+        {
+          "original": "South Western Region",
+          "normalized": "south_western_region"
+        },
+        {
+          "original": "Total Sales",
+          "normalized": "total_sales"
+        },
+        {
+          "original": "Selling Price",
+          "normalized": "selling_price"
+        }
+      ],
+      "rows": [
+        {
+          "row_number": 1,
+          "data": {
+            "sl_no": 1,
+            "item_name": "Redmi MI POCO M7 Pro (8GB+256GB) 5G",
+            "western_region": 6,
+            "eastern_region": 9,
+            "central_region": 1,
+            "south_western_region": 0,
+            "total_sales": 16,
+            "selling_price": 16299
+          }
+        },
+        {
+          "row_number": 2,
+          "data": {
+            "sl_no": 2,
+            "item_name": "Redmi Phone-Note 13 Pro (8GB+256GB) 5G",
+            "western_region": 1,
+            "eastern_region": 0,
+            "central_region": 0,
+            "south_western_region": 0,
+            "total_sales": 1,
+            "selling_price": 26099
+          }
+        },
+        {
+          "row_number": 3,
+          "data": {
+            "sl_no": 3,
+            "item_name": "Redmi Phone -13 (8GB+256GB)",
+            "western_region": 0,
+            "eastern_region": 1,
+            "central_region": 0,
+            "south_western_region": 0,
+            "total_sales": 1,
+            "selling_price": 13499
+          }
+        },
+        {
+          "row_number": 4,
+          "data": {
+            "sl_no": 4,
+            "item_name": "Redmi Phone -13 C (8GB+256GB) 5G",
+            "western_region": 0,
+            "eastern_region": 2,
+            "central_region": 0,
+            "south_western_region": 0,
+            "total_sales": 2,
+            "selling_price": 13999
+          }
+        },
+        {
+          "row_number": 5,
+          "data": {
+            "sl_no": 5,
+            "item_name": "Redmi Phone -A3 (4GB+128GB) 4G",
+            "western_region": 0,
+            "eastern_region": 1,
+            "central_region": 0,
+            "south_western_region": 0,
+            "total_sales": 1,
+            "selling_price": 6399
+          }
+        },
+        {
+          "row_number": 6,
+          "data": {
+            "sl_no": 7,
+            "item_name": "Redmi 14C (4GB+128GB) 4G",
+            "western_region": 0,
+            "eastern_region": 2,
+            "central_region": 1,
+            "south_western_region": 0,
+            "total_sales": 3,
+            "selling_price": 8299
+          }
+        },
+        {
+          "row_number": 7,
+          "data": {
+            "sl_no": 8,
+            "item_name": "Redmi 15 (8GB+256GB) 4G",
+            "western_region": 5,
+            "eastern_region": 16,
+            "central_region": 9,
+            "south_western_region": 14,
+            "total_sales": 44,
+            "selling_price": 13799
+          }
+        },
+        {
+          "row_number": 8,
+          "data": {
+            "sl_no": 9,
+            "item_name": "Redmi 15 (8GB+256GB) 5G",
+            "western_region": 12,
+            "eastern_region": 10,
+            "central_region": 10,
+            "south_western_region": 11,
+            "total_sales": 43,
+            "selling_price": 15239
+          }
+        },
+        {
+          "row_number": 9,
+          "data": {
+            "sl_no": 10,
+            "item_name": "Redmi 15C (6GB+128 GB ) 4G",
+            "western_region": 9,
+            "eastern_region": 17,
+            "central_region": 17,
+            "south_western_region": 15,
+            "total_sales": 58,
+            "selling_price": 9799
+          }
+        },
+        {
+          "row_number": 10,
+          "data": {
+            "sl_no": 11,
+            "item_name": "Redmi 15C (8GB+256 GB ) 4G",
+            "western_region": 10,
+            "eastern_region": 18,
+            "central_region": 11,
+            "south_western_region": 13,
+            "total_sales": 52,
+            "selling_price": 10999
+          }
+        },
+        {
+          "row_number": 11,
+          "data": {
+            "sl_no": 12,
+            "item_name": "Redmi 15C (8GB+256GB) 5G",
+            "western_region": 18,
+            "eastern_region": 19,
+            "central_region": 23,
+            "south_western_region": 13,
+            "total_sales": 73,
+            "selling_price": 12999
+          }
+        },
+        {
+          "row_number": 12,
+          "data": {
+            "sl_no": 13,
+            "item_name": "Redmi A5 (3GB+64GB) 4G",
+            "western_region": 0,
+            "eastern_region": 4,
+            "central_region": 1,
+            "south_western_region": 0,
+            "total_sales": 5,
+            "selling_price": 5999
+          }
+        },
+        {
+          "row_number": 13,
+          "data": {
+            "sl_no": 14,
+            "item_name": "Redmi A5 (4GB+128GB) 4G",
+            "western_region": 0,
+            "eastern_region": 13,
+            "central_region": 15,
+            "south_western_region": 3,
+            "total_sales": 31,
+            "selling_price": 6999
+          }
+        },
+        {
+          "row_number": 14,
+          "data": {
+            "sl_no": 15,
+            "item_name": "Redmi MI POCO M7 (8/256) 4G",
+            "western_region": 1,
+            "eastern_region": 2,
+            "central_region": 0,
+            "south_western_region": 2,
+            "total_sales": 5,
+            "selling_price": 13499
+          }
+        },
+        {
+          "row_number": 15,
+          "data": {
+            "sl_no": 16,
+            "item_name": "Redmi Note 13 (8GB+256GB) 5G",
+            "western_region": 0,
+            "eastern_region": 2,
+            "central_region": 0,
+            "south_western_region": 0,
+            "total_sales": 2,
+            "selling_price": 17999
+          }
+        },
+        {
+          "row_number": 16,
+          "data": {
+            "sl_no": 17,
+            "item_name": "Redmi Note -13 Pro (12GB+512GB) 5G",
+            "western_region": 0,
+            "eastern_region": 0,
+            "central_region": 0,
+            "south_western_region": 0,
+            "total_sales": 0,
+            "selling_price": null
+          }
+        },
+        {
+          "row_number": 17,
+          "data": {
+            "sl_no": 18,
+            "item_name": "Redmi Note 13 Pro+ (12GB+512GB) 5G",
+            "western_region": 0,
+            "eastern_region": 0,
+            "central_region": 0,
+            "south_western_region": 0,
+            "total_sales": 0,
+            "selling_price": null
+          }
+        },
+        {
+          "row_number": 18,
+          "data": {
+            "sl_no": 19,
+            "item_name": "Redmi Note 14 (12GB+512GB) 5G",
+            "western_region": 21,
+            "eastern_region": 0,
+            "central_region": 4,
+            "south_western_region": 3,
+            "total_sales": 28,
+            "selling_price": 23999
+          }
+        },
+        {
+          "row_number": 19,
+          "data": {
+            "sl_no": 20,
+            "item_name": "Redmi Note 14 (6GB+128GB) 4G",
+            "western_region": 0,
+            "eastern_region": 1,
+            "central_region": 1,
+            "south_western_region": 0,
+            "total_sales": 2,
+            "selling_price": 13399
+          }
+        },
+        {
+          "row_number": 20,
+          "data": {
+            "sl_no": 21,
+            "item_name": "Redmi Note 14 (8GB+256GB) 4G",
+            "western_region": 3,
+            "eastern_region": 5,
+            "central_region": 6,
+            "south_western_region": 4,
+            "total_sales": 18,
+            "selling_price": 15599
+          }
+        },
+        {
+          "row_number": 21,
+          "data": {
+            "sl_no": 22,
+            "item_name": "Redmi Note 14 (8GB+256GB) 5G",
+            "western_region": 7,
+            "eastern_region": 14,
+            "central_region": 4,
+            "south_western_region": 1,
+            "total_sales": 26,
+            "selling_price": 18799
+          }
+        },
+        {
+          "row_number": 22,
+          "data": {
+            "sl_no": 23,
+            "item_name": "Redmi Note 14 Pro (12GB+256GB) 5G",
+            "western_region": 3,
+            "eastern_region": 0,
+            "central_region": 0,
+            "south_western_region": 3,
+            "total_sales": 6,
+            "selling_price": 26599
+          }
+        },
+        {
+          "row_number": 23,
+          "data": {
+            "sl_no": 24,
+            "item_name": "Redmi Note 14 Pro (8GB+256GB) 5G",
+            "western_region": 0,
+            "eastern_region": 0,
+            "central_region": 0,
+            "south_western_region": 0,
+            "total_sales": 0,
+            "selling_price": null
+          }
+        },
+        {
+          "row_number": 24,
+          "data": {
+            "sl_no": 25,
+            "item_name": "Redmi Pad 2 (8GB/256 GB ) 4G",
+            "western_region": 0,
+            "eastern_region": 0,
+            "central_region": 0,
+            "south_western_region": 0,
+            "total_sales": 0,
+            "selling_price": 18898.95
+          }
+        },
+        {
+          "row_number": 25,
+          "data": {
+            "sl_no": 26,
+            "item_name": "Redmi Pad 2 Cover",
+            "western_region": 0,
+            "eastern_region": 0,
+            "central_region": 0,
+            "south_western_region": 0,
+            "total_sales": 0,
+            "selling_price": null
+          }
+        },
+        {
+          "row_number": 26,
+          "data": {
+            "sl_no": 27,
+            "item_name": "Redmi Pad SE 8.7 4G (6GB+128GB)",
+            "western_region": 1,
+            "eastern_region": 1,
+            "central_region": 0,
+            "south_western_region": 0,
+            "total_sales": 2,
+            "selling_price": 12598.95
+          }
+        },
+        {
+          "row_number": 27,
+          "data": {
+            "sl_no": 28,
+            "item_name": "Redmi Pad SE 8.7 4G (6GB+128GB) Cover",
+            "western_region": 1,
+            "eastern_region": 1,
+            "central_region": 0,
+            "south_western_region": 0,
+            "total_sales": 2,
+            "selling_price": 822
+          }
+        },
+        {
+          "row_number": 28,
+          "data": {
+            "sl_no": 29,
+            "item_name": "Redmi Phone- 13 Pro + (8GB+256GB) 5G",
+            "western_region": 0,
+            "eastern_region": 0,
+            "central_region": 0,
+            "south_western_region": 0,
+            "total_sales": 0,
+            "selling_price": null
+          }
+        },
+        {
+          "row_number": 29,
+          "data": {
+            "sl_no": 30,
+            "item_name": "Redmi Phone - A3 (3GB+64GB) 4G",
+            "western_region": 0,
+            "eastern_region": 0,
+            "central_region": 0,
+            "south_western_region": 0,
+            "total_sales": 0,
+            "selling_price": null
+          }
+        },
+        {
+          "row_number": 30,
+          "data": {
+            "sl_no": 31,
+            "item_name": "Redmi Phone- 13C (6GB+128GB) 5G",
+            "western_region": 0,
+            "eastern_region": 2,
+            "central_region": 0,
+            "south_western_region": 0,
+            "total_sales": 2,
+            "selling_price": 10999
+          }
+        },
+        {
+          "row_number": 31,
+          "data": {
+            "sl_no": 32,
+            "item_name": "Redmi Phone -14C (6GB+128GB) 4G",
+            "western_region": 0,
+            "eastern_region": 4,
+            "central_region": 0,
+            "south_western_region": 0,
+            "total_sales": 4,
+            "selling_price": 9799
+          }
+        },
+        {
+          "row_number": 32,
+          "data": {
+            "sl_no": 33,
+            "item_name": "Redmi Phone 14C (8GB+256GB) 4G",
+            "western_region": 0,
+            "eastern_region": 4,
+            "central_region": 5,
+            "south_western_region": 0,
+            "total_sales": 9,
+            "selling_price": 10999
+          }
+        },
+        {
+          "row_number": 33,
+          "data": {
+            "sl_no": 34,
+            "item_name": "Redmi POCO C71 (4GB+128 GB ) 4G",
+            "western_region": 0,
+            "eastern_region": 1,
+            "central_region": 1,
+            "south_western_region": 2,
+            "total_sales": 4,
+            "selling_price": 6459
+          }
+        },
+        {
+          "row_number": 34,
+          "data": {
+            "sl_no": 35,
+            "item_name": "Redmi POCO C85 (8GB+256GB) 4G",
+            "western_region": 7,
+            "eastern_region": 14,
+            "central_region": 11,
+            "south_western_region": 8,
+            "total_sales": 40,
+            "selling_price": 11599
+          }
+        },
+        {
+          "row_number": 35,
+          "data": {
+            "sl_no": 36,
+            "item_name": "Redmi Xiaomi 15T (12GB+512GB) 5G",
+            "western_region": 7,
+            "eastern_region": 1,
+            "central_region": 1,
+            "south_western_region": 0,
+            "total_sales": 9,
+            "selling_price": 40999
+          }
+        },
+        {
+          "row_number": 36,
+          "data": {
+            "sl_no": null,
+            "item_name": "Grand Total",
+            "western_region": 112,
+            "eastern_region": 164,
+            "central_region": 121,
+            "south_western_region": 92,
+            "total_sales": 489,
+            "selling_price": null
+          }
+        }
+      ]
+    }
+  ]
+}

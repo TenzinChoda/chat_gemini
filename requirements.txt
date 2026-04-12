@@ -1,0 +1,17 @@
+langchain
+langchain-classic
+langchain-community
+langchain-core
+langchain-ollama
+langchain-chroma
+chromadb
+sentence-transformers
+pandas
+openpyxl
+pypdf
+fastapi
+uvicorn
+python-multipart
+pydantic-settings
+python-dotenv
+scikit-learn

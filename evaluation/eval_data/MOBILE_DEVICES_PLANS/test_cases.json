@@ -1,0 +1,18 @@
+{
+  "domain": "MOBILE_DEVICES_PLANS",
+  "description": "Handset offers, postpaid plans, roaming — device_sales and postpaid rows in structured data; may route to rules or RAG.",
+  "cases": [
+    {
+      "id": "mob-01",
+      "user_input": "What are postpaid billing cycle charges for monthly 199 plan",
+      "expected_intent": "bill_enquiry",
+      "expected_method": "rule"
+    },
+    {
+      "id": "mob-02",
+      "user_input": "SIM activation and also data package pricing for 5G",
+      "expected_intent": "data_package",
+      "expected_method": "rule"
+    }
+  ]
+}

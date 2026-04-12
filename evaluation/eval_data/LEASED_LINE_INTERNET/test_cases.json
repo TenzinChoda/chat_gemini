@@ -1,0 +1,18 @@
+{
+  "domain": "LEASED_LINE_INTERNET",
+  "description": "Leased line, AirFiber, enterprise bandwidth — pricing/leased tables in all_csv_structured_data.json.",
+  "cases": [
+    {
+      "id": "lease-01",
+      "user_input": "leased line internet bill enquiry corporate",
+      "expected_intent": "bill_enquiry",
+      "expected_method": "rule"
+    },
+    {
+      "id": "lease-02",
+      "user_input": "home internet broadband Mbps plan for office leased",
+      "expected_intent": "fwa",
+      "expected_method": "rule"
+    }
+  ]
+}

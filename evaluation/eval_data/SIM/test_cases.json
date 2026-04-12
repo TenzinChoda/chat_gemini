@@ -1,0 +1,30 @@
+{
+  "domain": "SIM",
+  "description": "SIM activation, replacement, PUK, eSIM, barred SIM — matches ticket/service data and FAQ rules.",
+  "cases": [
+    {
+      "id": "sim-01",
+      "user_input": "How do I activate my new SIM?",
+      "expected_intent": "sim_activation",
+      "expected_method": "rule"
+    },
+    {
+      "id": "sim-02",
+      "user_input": "I need my PUK code my sim is locked",
+      "expected_intent": "puk_code",
+      "expected_method": "rule"
+    },
+    {
+      "id": "sim-03",
+      "user_input": "I want esim on my phone",
+      "expected_intent": "esim",
+      "expected_method": "rule"
+    },
+    {
+      "id": "sim-04",
+      "user_input": "My SIM is barred please help",
+      "expected_intent": "sim_barred",
+      "expected_method": "rule"
+    }
+  ]
+}

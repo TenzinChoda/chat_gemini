@@ -1,0 +1,18 @@
+{
+  "domain": "APN_SETTINGS",
+  "description": "Mobile internet APN and handset configuration.",
+  "cases": [
+    {
+      "id": "apn-01",
+      "user_input": "How to set APN for internet",
+      "expected_intent": "apn_setting",
+      "expected_method": "rule"
+    },
+    {
+      "id": "apn-02",
+      "user_input": "apn setting for mobile internet configure",
+      "expected_intent": "apn_setting",
+      "expected_method": "rule"
+    }
+  ]
+}
