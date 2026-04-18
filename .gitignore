@@ -20,6 +20,7 @@ Thumbs.db
 # Local databases & vector index (regenerate with pipeline/ingest.py)
 database/chroma_db/
 database/*.db
+database/ingest_manifest.json
 
 # Evaluation output (regenerate)
 evaluation/report.txt

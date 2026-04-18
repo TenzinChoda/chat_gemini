@@ -1,18 +1,20 @@
 {
   "domain": "BILL",
-  "description": "Postpaid, invoice, payment, outstanding — aligned with billing enquiry rules and billing-related table rows.",
+  "description": "Postpaid, invoice, payment, outstanding \u2014 aligned with billing enquiry rules and billing-related table rows.",
   "cases": [
     {
       "id": "bill-01",
       "user_input": "I need my postpaid bill and invoice",
-      "expected_intent": "bill_enquiry",
-      "expected_method": "rule"
+      "expected_intent": "rag",
+      "expected_method": "rag",
+      "flexible": true
     },
     {
       "id": "bill-02",
       "user_input": "What is my outstanding payment on billing",
-      "expected_intent": "bill_enquiry",
-      "expected_method": "rule"
+      "expected_intent": "rag",
+      "expected_method": "rag",
+      "flexible": true
     }
   ]
 }

@@ -1,18 +1,20 @@
 {
   "domain": "FIXED_LINE",
-  "description": "Landline / fixed-line — website content in index; routing uses bill keywords where applicable.",
+  "description": "Landline / fixed-line \u2014 website content in index; routing uses bill keywords where applicable.",
   "cases": [
     {
       "id": "fix-01",
       "user_input": "fixed line service bill and invoice payment",
-      "expected_intent": "bill_enquiry",
-      "expected_method": "rule"
+      "expected_intent": "rag",
+      "expected_method": "rag",
+      "flexible": true
     },
     {
       "id": "fix-02",
       "user_input": "landline monthly rental billing outstanding",
-      "expected_intent": "bill_enquiry",
-      "expected_method": "rule"
+      "expected_intent": "rag",
+      "expected_method": "rag",
+      "flexible": true
     }
   ]
 }

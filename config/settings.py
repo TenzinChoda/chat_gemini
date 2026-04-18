@@ -40,10 +40,17 @@ class Settings(BaseSettings):
 
     # --- Models ---
     ollama_model: str = "llama3"
-    ollama_temperature: float = 0.2
+    # Slightly higher default for more natural phrasing (tune via BTL_OLLAMA_TEMPERATURE)
+    ollama_temperature: float = 0.35
     embedding_model: str = "all-MiniLM-L6-v2"
-    chroma_collection_name: str = "bt_tickets"
-    rag_retriever_k: int = 3
+    chroma_collection_name: str = "bt_knowledge_v2"
+    # Higher k improves recall for factual questions where many chunks mention "BTL"
+    rag_retriever_k: int = 5
+    # MMR: retrieve fetch_k candidates then diversify to k (reduces redundant chunks)
+    rag_mmr_fetch_k: int = 24
+    rag_use_mmr: bool = True
+    # Delete and recreate Chroma persist dir on full ingest (recommended for clean rebuilds)
+    ingest_reset_chroma: bool = True
 
     # --- API / CORS (production: set CORS to your frontend origin) ---
     cors_allow_origins: str = "*"

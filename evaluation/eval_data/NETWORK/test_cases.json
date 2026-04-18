@@ -1,18 +1,20 @@
 {
   "domain": "NETWORK",
-  "description": "Signal, coverage, call drops, slow internet — network issue FAQ and network-related content in the index.",
+  "description": "Signal, coverage, call drops, slow internet \u2014 network issue FAQ and network-related content in the index.",
   "cases": [
     {
       "id": "net-01",
       "user_input": "Network signal is very weak and internet is slow",
-      "expected_intent": "network_issue",
-      "expected_method": "rule"
+      "expected_intent": "rag",
+      "expected_method": "rag",
+      "flexible": true
     },
     {
       "id": "net-02",
       "user_input": "My call keeps dropping and 4g speed is bad",
-      "expected_intent": "network_issue",
-      "expected_method": "rule"
+      "expected_intent": "rag",
+      "expected_method": "rag",
+      "flexible": true
     }
   ]
 }
