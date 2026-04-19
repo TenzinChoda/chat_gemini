@@ -1,6 +1,6 @@
 # BT Virtual Assistant
 
-**A hybrid AI assistant for Bhutan Telecom Limited (BTL)** — it answers common customer questions using a mix of **instant keyword rules**, **retrieval from your own documents** (Excel, JSON, CSV, PDF), and a **local large language model** (Ollama). No paid cloud LLM API is required for the default setup.
+**A hybrid AI assistant for Bhutan Telecom Limited (BTL)** — it answers common customer questions using a mix of **instant keyword rules**, **retrieval from your own documents** (Excel, JSON, CSV, PDF), and a **local large language  pythomodel** (Ollama). No paid cloud LLM API is required for the default setup.
 
 ---
 
