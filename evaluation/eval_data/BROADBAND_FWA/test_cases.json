@@ -1,18 +1,20 @@
 {
   "domain": "BROADBAND_FWA",
-  "description": "Home WiFi, FWA, broadband, AirFiber — overlaps Internet/leased content in JSON and PDFs.",
+  "description": "Home WiFi, FWA, broadband, AirFiber \u2014 overlaps Internet/leased content in JSON and PDFs.",
   "cases": [
     {
       "id": "fwa-01",
       "user_input": "home wifi broadband fwa",
-      "expected_intent": "fwa",
-      "expected_method": "rule"
+      "expected_intent": "rag",
+      "expected_method": "rag",
+      "flexible": true
     },
     {
       "id": "fwa-02",
       "user_input": "I need home internet connection broadband plan",
-      "expected_intent": "fwa",
-      "expected_method": "rule"
+      "expected_intent": "rag",
+      "expected_method": "rag",
+      "flexible": true
     }
   ]
 }

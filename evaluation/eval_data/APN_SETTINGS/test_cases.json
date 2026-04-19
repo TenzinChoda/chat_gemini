@@ -5,14 +5,16 @@
     {
       "id": "apn-01",
       "user_input": "How to set APN for internet",
-      "expected_intent": "apn_setting",
-      "expected_method": "rule"
+      "expected_intent": "rag",
+      "expected_method": "rag",
+      "flexible": true
     },
     {
       "id": "apn-02",
       "user_input": "apn setting for mobile internet configure",
-      "expected_intent": "apn_setting",
-      "expected_method": "rule"
+      "expected_intent": "rag",
+      "expected_method": "rag",
+      "flexible": true
     }
   ]
 }

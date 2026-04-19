@@ -1,18 +1,20 @@
 {
   "domain": "ELOAD_RECHARGE",
-  "description": "E-Load, vouchers, top-up — matches VAS/e-load content in scraped data.",
+  "description": "E-Load, vouchers, top-up \u2014 matches VAS/e-load content in scraped data.",
   "cases": [
     {
       "id": "eload-01",
       "user_input": "eload voucher recharge topup",
-      "expected_intent": "eload_voucher",
-      "expected_method": "rule"
+      "expected_intent": "rag",
+      "expected_method": "rag",
+      "flexible": true
     },
     {
       "id": "eload-02",
       "user_input": "paper voucher recharge topup balance",
-      "expected_intent": "eload_voucher",
-      "expected_method": "rule"
+      "expected_intent": "rag",
+      "expected_method": "rag",
+      "flexible": true
     }
   ]
 }

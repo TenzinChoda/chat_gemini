@@ -1,14 +1,19 @@
-"""FastAPI server for the BT hybrid chatbot."""
+"""FastAPI server for the BT RAG chatbot (Chroma + Ollama)."""
 
 from __future__ import annotations
 
 import sqlite3
+from pathlib import Path
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
 from chatbot.hybrid_bot import DB_PATH, generate_response
 from config.settings import get_settings
+
+_FRONTEND_DIR = Path(__file__).resolve().parent.parent / "frontend"
 
 _settings = get_settings()
 _cors = _settings.cors_allow_origins.strip()
@@ -44,6 +49,7 @@ def root():
         "chat": "POST /chat",
         "feedback": "POST /feedback",
         "stats": "/stats",
+        "ui": "GET /ui/ — chat page (open in browser while API runs on this port)",
     }
 
 
@@ -54,7 +60,7 @@ def chat_help():
         "info": "This URL only accepts POST (not a normal browser visit).",
         "hint": "Send JSON: {\"message\": \"...\", \"session_id\": \"...\"}",
         "example": {"message": "How do I check my data balance?", "session_id": "my-session"},
-        "try_it": "http://127.0.0.1:8000/docs — or open frontend/index.html",
+        "try_it": "http://127.0.0.1:8000/docs — or open http://127.0.0.1:8000/ui/",
     }
 
 
@@ -109,3 +115,12 @@ def stats():
         "feedback_count": n_feedback,
         "average_rating": round(float(avg_rating or 0), 4) if avg_rating else None,
     }
+
+
+# Chat UI: http://127.0.0.1:8000/ui/  (same port as API; no separate :8080 server)
+if _FRONTEND_DIR.is_dir():
+    app.mount(
+        "/ui",
+        StaticFiles(directory=str(_FRONTEND_DIR), html=True),
+        name="ui",
+    )

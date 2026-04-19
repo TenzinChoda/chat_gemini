@@ -1,1 +1,1 @@
-# BT hybrid chatbot package
+# BT RAG chatbot package

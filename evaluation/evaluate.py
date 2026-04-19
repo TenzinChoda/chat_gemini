@@ -17,26 +17,27 @@ from chatbot.hybrid_bot import DB_PATH, generate_response  # noqa: E402
 REPORT_PATH = PROJECT_ROOT / "evaluation" / "report.txt"
 EVAL_DATA_DIR = PROJECT_ROOT / "evaluation" / "eval_data"
 
-# Built-in smoke tests (routing)
+# Built-in smoke tests (RAG-only: expect rag, or fallback when Ollama/chroma unavailable)
 TEST_CASES: list[dict] = [
-    {"user_input": "How do I activate my new SIM?", "expected_intent": "sim_activation", "expected_method": "rule"},
-    {"user_input": "What data packages do you have for 4G?", "expected_intent": "data_package", "expected_method": "rule"},
-    {"user_input": "My balance was deducted without reason", "expected_intent": "balance_deduction", "expected_method": "rule"},
-    {"user_input": "Network signal is very weak and internet is slow", "expected_intent": "network_issue", "expected_method": "rule"},
-    {"user_input": "My SIM is barred please help", "expected_intent": "sim_barred", "expected_method": "rule"},
-    {"user_input": "I need my postpaid bill and invoice", "expected_intent": "bill_enquiry", "expected_method": "rule"},
-    {"user_input": "I need my PUK code sim locked", "expected_intent": "puk_code", "expected_method": "rule"},
-    {"user_input": "How to set APN for internet", "expected_intent": "apn_setting", "expected_method": "rule"},
-    {"user_input": "eload voucher recharge topup", "expected_intent": "eload_voucher", "expected_method": "rule"},
-    {"user_input": "home wifi broadband fwa", "expected_intent": "fwa", "expected_method": "rule"},
-    {"user_input": "I want esim on my phone", "expected_intent": "esim", "expected_method": "rule"},
-    {"user_input": "hello there", "expected_intent": "greeting", "expected_method": "greeting"},
+    {"user_input": "How do I activate my new SIM?", "expected_intent": "rag", "expected_method": "rag", "flexible": True},
+    {"user_input": "What data packages do you have for 4G?", "expected_intent": "rag", "expected_method": "rag", "flexible": True},
+    {"user_input": "My balance was deducted without reason", "expected_intent": "rag", "expected_method": "rag", "flexible": True},
+    {"user_input": "Network signal is very weak and internet is slow", "expected_intent": "rag", "expected_method": "rag", "flexible": True},
+    {"user_input": "My SIM is barred please help", "expected_intent": "rag", "expected_method": "rag", "flexible": True},
+    {"user_input": "I need my postpaid bill and invoice", "expected_intent": "rag", "expected_method": "rag", "flexible": True},
+    {"user_input": "I need my PUK code sim locked", "expected_intent": "rag", "expected_method": "rag", "flexible": True},
+    {"user_input": "How to set APN for internet", "expected_intent": "rag", "expected_method": "rag", "flexible": True},
+    {"user_input": "eload voucher recharge topup", "expected_intent": "rag", "expected_method": "rag", "flexible": True},
+    {"user_input": "home wifi broadband fwa", "expected_intent": "rag", "expected_method": "rag", "flexible": True},
+    {"user_input": "I want esim on my phone", "expected_intent": "rag", "expected_method": "rag", "flexible": True},
+    {"user_input": "hello there", "expected_intent": "rag", "expected_method": "rag", "flexible": True},
     {"user_input": "", "expected_intent": "empty", "expected_method": "fallback"},
     {"user_input": "asdfgh qwerty zzz", "expected_intent": "fallback", "expected_method": "fallback"},
     {
         "user_input": "SIM activation and also data package pricing for 5G",
-        "expected_intent": "data_package",
-        "expected_method": "rule",
+        "expected_intent": "rag",
+        "expected_method": "rag",
+        "flexible": True,
     },
 ]
 
@@ -106,7 +107,7 @@ def main() -> None:
         actual_method = out.get("method", "")
         method_counts[actual_method] = method_counts.get(actual_method, 0) + 1
 
-        flex = tc["user_input"] == "asdfgh qwerty zzz"
+        flex = bool(tc.get("flexible")) or tc["user_input"] == "asdfgh qwerty zzz"
         ok, _ = _case_passes({**tc, "flexible": flex}, out)
 
         if ok:

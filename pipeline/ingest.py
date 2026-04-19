@@ -1,20 +1,21 @@
 """
-ETL: load BTL ticket Excel files and/or JSON/CSV/PDF knowledge exports into ChromaDB.
+ETL: load Excel / JSON / CSV / PDF knowledge into ChromaDB with cleaning and deduplication.
 
-Expected layout under data/raw/:
-  json/   — bt_dataset.json, all_csv_structured_data.json (and other *.json you add)
-  excel/  — *.xlsx call reports
-  csv/    — *.csv tabular files (each row → one document)
-  pdf/    — *.pdf (each page → one document)
+Steps:
+  1) Load raw documents from data/raw/
+  2) Clean text (embedding-friendly, boilerplate stripped)
+  3) Deduplicate across sources (website JSON > structured tables > tickets > CSV > PDF)
+  4) Reset vector store and persist a new Chroma collection
 
-Run from project root: python pipeline/ingest.py
+Run from bt_chatbot/: python pipeline/ingest.py
 """
 
 from __future__ import annotations
 
 import json
-import re
+import shutil
 import sys
+from datetime import datetime, timezone
 from pathlib import Path
 
 import pandas as pd
@@ -28,6 +29,8 @@ if str(_ROOT) not in sys.path:
     sys.path.insert(0, str(_ROOT))
 
 from config.settings import get_settings
+from pipeline.deduplicate import deduplicate_documents
+from pipeline.text_normalize import clean_text_for_embedding, legacy_clean_description
 
 _s = get_settings()
 DATA_RAW = _s.data_raw_dir
@@ -38,8 +41,9 @@ DIR_PDF = _s.dir_pdf
 CHROMA_DIR = _s.chroma_persist_dir
 COLLECTION_NAME = _s.chroma_collection_name
 EMBED_MODEL = _s.embedding_model
+INGEST_RESET_CHROMA = _s.ingest_reset_chroma
+MANIFEST_PATH = _s.project_root / "database" / "ingest_manifest.json"
 
-# Map structured JSON categories to BTL-style complaint types (7 classes)
 _CATEGORY_TO_COMPLAINT: dict[str, str] = {
     "pricing": "Internet",
     "device_sales": "Mobile",
@@ -53,15 +57,6 @@ _CATEGORY_TO_COMPLAINT: dict[str, str] = {
     "mobile": "Mobile",
     "fixed": "Fixed Line",
 }
-
-
-def clean_description(text: str) -> str:
-    if not text or not isinstance(text, str):
-        return ""
-    s = text.lower().strip()
-    s = re.sub(r"[^\w\s]", " ", s)
-    s = re.sub(r"\s+", " ", s).strip()
-    return s
 
 
 def normalize_excel_columns(df: pd.DataFrame) -> pd.DataFrame:
@@ -103,7 +98,6 @@ def row_dict_to_text(data: dict) -> str:
 
 
 def _resolve_json(name: str) -> Path | None:
-    """Prefer data/raw/json/{name}, fall back to data/raw/{name}."""
     p = DIR_JSON / name
     if p.is_file():
         return p
@@ -111,6 +105,31 @@ def _resolve_json(name: str) -> Path | None:
     if legacy.is_file():
         return legacy
     return None
+
+
+def _meta_base(
+    *,
+    source_origin: str,
+    source_path: str,
+    ticket_id: str,
+    complaint_type: str,
+    service: str,
+    status: str,
+    month: str,
+    extra: dict | None = None,
+) -> dict:
+    m = {
+        "source_origin": source_origin,
+        "source_path": source_path,
+        "ticket_id": ticket_id,
+        "complaint_type": complaint_type,
+        "service": service,
+        "status": status,
+        "month": month,
+    }
+    if extra:
+        m.update(extra)
+    return m
 
 
 def load_excel_files() -> tuple[list[Document], dict[str, int]]:
@@ -121,7 +140,7 @@ def load_excel_files() -> tuple[list[Document], dict[str, int]]:
         paths.extend(sorted(DIR_EXCEL.glob("*.xlsx")))
     paths.extend(sorted(DATA_RAW.glob("*.xlsx")))
     seen: set[Path] = set()
-    unique_paths = []
+    unique_paths: list[Path] = []
     for p in paths:
         rp = p.resolve()
         if rp in seen:
@@ -132,6 +151,7 @@ def load_excel_files() -> tuple[list[Document], dict[str, int]]:
     for xlsx in unique_paths:
         sheet_counts = 0
         xl = pd.ExcelFile(xlsx)
+        rel = f"excel/{xlsx.name}"
         for sheet in xl.sheet_names:
             df = xl.parse(sheet)
             df = normalize_excel_columns(df)
@@ -149,21 +169,24 @@ def load_excel_files() -> tuple[list[Document], dict[str, int]]:
                 tid = str(row.get("ticket_id", "") or "").strip()
                 if not tid.startswith("BTL"):
                     continue
-                desc = clean_description(str(row.get("description", "") or ""))
-                if len(desc) < 3:
+                raw_desc = str(row.get("description", "") or "")
+                desc = clean_text_for_embedding(raw_desc)
+                if len(legacy_clean_description(desc)) < 3:
                     continue
                 service = str(row.get("service", "") or "")[:500]
                 month = str(row.get("ticket_date", "") or "")[:32]
                 if not month:
                     month = sheet
                 page = f"Service: {service}. Issue: {desc}"
-                meta = {
-                    "ticket_id": tid,
-                    "complaint_type": str(row.get("complaint_type", "") or "Others"),
-                    "service": service,
-                    "status": str(row.get("status", "") or "Close"),
-                    "month": month,
-                }
+                meta = _meta_base(
+                    source_origin="excel_ticket",
+                    source_path=rel,
+                    ticket_id=tid,
+                    complaint_type=str(row.get("complaint_type", "") or "Others"),
+                    service=service,
+                    status=str(row.get("status", "") or "Close"),
+                    month=month,
+                )
                 docs.append(Document(page_content=page, metadata=meta))
                 sheet_counts += 1
         counts[xlsx.name] = sheet_counts
@@ -175,22 +198,27 @@ def load_bt_dataset_json(path: Path) -> tuple[list[Document], int]:
     with open(path, encoding="utf-8") as f:
         data = json.load(f)
     n = 0
+    rel = f"json/{path.name}"
     for i, item in enumerate(data):
         title = str(item.get("title", "") or "Website")
         content = str(item.get("content", "") or "")
-        desc = clean_description(content)
-        if len(desc) < 3:
+        url = str(item.get("url", "") or "")
+        body = clean_text_for_embedding(content)
+        if len(legacy_clean_description(body)) < 3:
             continue
         tid = f"BTL-WEB-{i:06d}"
         service = title[:500]
-        page = f"Service: {service}. Issue: {desc}"
-        meta = {
-            "ticket_id": tid,
-            "complaint_type": "Enquery",
-            "service": service,
-            "status": "Close",
-            "month": "web",
-        }
+        page = f"Topic: {service}. Information: {body}"
+        meta = _meta_base(
+            source_origin="bt_web",
+            source_path=rel,
+            ticket_id=tid,
+            complaint_type="Enquery",
+            service=service,
+            status="Close",
+            month="web",
+            extra={"source_url": url[:2000]},
+        )
         docs.append(Document(page_content=page, metadata=meta))
         n += 1
     return docs, n
@@ -202,33 +230,36 @@ def load_structured_tables_json(path: Path) -> tuple[list[Document], int]:
         root = json.load(f)
     tables = root.get("tables", [])
     n = 0
+    rel = f"json/{path.name}"
     for ti, table in enumerate(tables):
         tname = str(table.get("table_name", "table"))
         cat = table.get("category")
         complaint = complaint_from_category(cat)
         for row in table.get("rows", []):
             rd = row.get("data", {})
-            text = clean_description(row_dict_to_text(rd))
-            if len(text) < 3:
+            raw_joined = row_dict_to_text(rd)
+            text = clean_text_for_embedding(raw_joined)
+            if len(legacy_clean_description(text)) < 3:
                 continue
             ri = row.get("row_number", n)
             tid = f"BTL-TBL-{ti}-{ri}"
             service = tname[:500]
             page = f"Service: {service}. Issue: {text}"
-            meta = {
-                "ticket_id": tid,
-                "complaint_type": complaint,
-                "service": service,
-                "status": "Close",
-                "month": "structured",
-            }
+            meta = _meta_base(
+                source_origin="structured_json",
+                source_path=rel,
+                ticket_id=tid,
+                complaint_type=complaint,
+                service=service,
+                status="Close",
+                month="structured",
+            )
             docs.append(Document(page_content=page, metadata=meta))
             n += 1
     return docs, n
 
 
 def load_csv_files() -> tuple[list[Document], dict[str, int]]:
-    """Each row of each .csv becomes one document."""
     docs: list[Document] = []
     counts: dict[str, int] = {}
     if not DIR_CSV.is_dir():
@@ -243,22 +274,25 @@ def load_csv_files() -> tuple[list[Document], dict[str, int]]:
             continue
 
         stem = csv_path.stem[:500]
+        rel = f"csv/{csv_path.name}"
         added = 0
         for j, (_, row) in enumerate(df.iterrows()):
             d = row.to_dict()
-            text = clean_description(row_dict_to_text(d))
-            if len(text) < 3:
+            text = clean_text_for_embedding(row_dict_to_text(d))
+            if len(legacy_clean_description(text)) < 3:
                 continue
             tid = f"BTL-CSV-{ci}-{j}"
             page = f"Service: {stem}. Issue: {text}"
-            meta = {
-                "ticket_id": tid,
-                "complaint_type": "Others",
-                "service": stem,
-                "status": "Close",
-                "month": "csv",
-                "source_file": csv_path.name,
-            }
+            meta = _meta_base(
+                source_origin="csv_row",
+                source_path=rel,
+                ticket_id=tid,
+                complaint_type="Others",
+                service=stem,
+                status="Close",
+                month="csv",
+                extra={"source_file": csv_path.name},
+            )
             docs.append(Document(page_content=page, metadata=meta))
             added += 1
         counts[csv_path.name] = added
@@ -267,7 +301,6 @@ def load_csv_files() -> tuple[list[Document], dict[str, int]]:
 
 
 def load_pdf_directory(pdf_dir: Path) -> tuple[list[Document], dict[str, int]]:
-    """Load each page of each .pdf as a separate document."""
     docs: list[Document] = []
     per_file: dict[str, int] = {}
     if not pdf_dir.is_dir():
@@ -284,23 +317,26 @@ def load_pdf_directory(pdf_dir: Path) -> tuple[list[Document], dict[str, int]]:
             continue
 
         stem = pdf_path.stem[:500]
+        rel = f"pdf/{pdf_path.name}"
         added = 0
         for pi, page in enumerate(pages):
             raw = page.page_content or ""
-            desc = clean_description(raw)
-            if len(desc) < 3:
+            body = clean_text_for_embedding(raw)
+            if len(legacy_clean_description(body)) < 3:
                 continue
             pnum = pi + 1
             tid = f"BTL-PDF-{fi:03d}-{pnum:04d}"
-            page_text = f"Service: {stem}. Issue: {desc}"
-            meta = {
-                "ticket_id": tid,
-                "complaint_type": "Enquery",
-                "service": stem,
-                "status": "Close",
-                "month": "pdf",
-                "source_file": pdf_path.name,
-            }
+            page_text = f"Document: {stem} (page {pnum}). Content: {body}"
+            meta = _meta_base(
+                source_origin="pdf_page",
+                source_path=rel,
+                ticket_id=tid,
+                complaint_type="Enquery",
+                service=stem,
+                status="Close",
+                month="pdf",
+                extra={"source_file": pdf_path.name, "page": pnum},
+            )
             docs.append(Document(page_content=page_text, metadata=meta))
             added += 1
         per_file[pdf_path.name] = added
@@ -308,10 +344,15 @@ def load_pdf_directory(pdf_dir: Path) -> tuple[list[Document], dict[str, int]]:
     return docs, per_file
 
 
+def reset_vector_store_dir() -> None:
+    if CHROMA_DIR.is_dir() and INGEST_RESET_CHROMA:
+        shutil.rmtree(CHROMA_DIR)
+    CHROMA_DIR.mkdir(parents=True, exist_ok=True)
+
+
 def main() -> None:
     for d in (DATA_RAW, DIR_JSON, DIR_EXCEL, DIR_CSV, DIR_PDF):
         d.mkdir(parents=True, exist_ok=True)
-    CHROMA_DIR.mkdir(parents=True, exist_ok=True)
 
     all_docs: list[Document] = []
     file_counts: dict[str, int] = {}
@@ -362,15 +403,39 @@ def main() -> None:
         )
         return
 
+    print(f"Total raw documents: {len(all_docs)}")
+    deduped, stats = deduplicate_documents(all_docs)
+    print(
+        "Deduplication: "
+        f"input={stats['input']}, kept={stats['output']}, "
+        f"dropped_duplicate={stats['dropped_duplicate']}, "
+        f"dropped_too_short={stats['dropped_too_short']}"
+    )
+
+    reset_vector_store_dir()
     embeddings = HuggingFaceEmbeddings(model_name=EMBED_MODEL)
     Chroma.from_documents(
-        documents=all_docs,
+        documents=deduped,
         embedding=embeddings,
         collection_name=COLLECTION_NAME,
         persist_directory=str(CHROMA_DIR),
     )
-    print(f"Total documents indexed: {len(all_docs)}")
-    print(f"Chroma persisted to {CHROMA_DIR}")
+    print(f"Total documents indexed: {len(deduped)}")
+    print(f"Chroma collection={COLLECTION_NAME!r} persisted to {CHROMA_DIR}")
+
+    MANIFEST_PATH.parent.mkdir(parents=True, exist_ok=True)
+    manifest = {
+        "built_at_utc": datetime.now(timezone.utc).isoformat(),
+        "collection_name": COLLECTION_NAME,
+        "embedding_model": EMBED_MODEL,
+        "chroma_dir": str(CHROMA_DIR),
+        "file_counts": file_counts,
+        "deduplication": stats,
+        "indexed_documents": len(deduped),
+    }
+    with open(MANIFEST_PATH, "w", encoding="utf-8") as mf:
+        json.dump(manifest, mf, indent=2)
+    print(f"Wrote manifest to {MANIFEST_PATH}")
 
 
 if __name__ == "__main__":

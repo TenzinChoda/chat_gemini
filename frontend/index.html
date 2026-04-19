@@ -47,6 +47,8 @@
       background: #fff;
       border: 1px solid #ccc;
       color: #222;
+      /* Show line breaks from the model (\n); default HTML collapses them */
+      white-space: pre-line;
     }
     .badge {
       display: inline-block;
@@ -56,10 +58,8 @@
       margin-top: 0.5rem;
       font-weight: 600;
     }
-    .badge.rule { background: #d4edda; color: #155724; }
     .badge.rag { background: #cce5ff; color: #004085; }
     .badge.fallback { background: #e2e3e5; color: #383d41; }
-    .badge.greeting { background: #fff3cd; color: #856404; }
     .stars { margin-top: 0.5rem; }
     .stars button {
       background: none;
@@ -139,8 +139,18 @@
     </div>
   </footer>
   <script>
-    const API = "http://localhost:8000/chat";
-    const FEEDBACK_API = "http://localhost:8000/feedback";
+    // Same port as API (e.g. http://127.0.0.1:8000/ui/) → relative /chat. File or :8080 → full URL.
+    (function () {
+      const p = location.port;
+      const proto = location.protocol;
+      const base =
+        proto === "file:" || (p && p !== "8000")
+          ? "http://127.0.0.1:8000"
+          : "";
+      window.__BT_API_BASE = base;
+    })();
+    const API = (window.__BT_API_BASE || "") + "/chat";
+    const FEEDBACK_API = (window.__BT_API_BASE || "") + "/feedback";
     const sessionId = crypto.randomUUID();
     const chat = document.getElementById("chat");
     const messageEl = document.getElementById("message");
@@ -149,10 +159,9 @@
 
     function badgeClass(method) {
       const m = (method || "").toLowerCase();
-      if (m === "rule") return "rule";
       if (m === "rag") return "rag";
       if (m === "fallback") return "fallback";
-      return "greeting";
+      return "rag";
     }
 
     function appendUser(text) {
@@ -169,7 +178,7 @@
       wrap.textContent = text;
       const badge = document.createElement("span");
       badge.className = "badge " + badgeClass(method);
-      badge.textContent = method === "rule" ? "Rule" : method === "rag" ? "RAG" : method === "fallback" ? "Fallback" : "Greeting";
+      badge.textContent = method === "rag" ? "RAG" : method === "fallback" ? "Fallback" : "RAG";
       wrap.appendChild(document.createElement("br"));
       wrap.appendChild(badge);
 

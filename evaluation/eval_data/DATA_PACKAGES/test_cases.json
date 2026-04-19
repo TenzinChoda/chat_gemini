@@ -1,18 +1,20 @@
 {
   "domain": "DATA_PACKAGES",
-  "description": "Prepaid data packs, 4G/5G packages — matches data_package rule and pricing tables in structured JSON.",
+  "description": "Prepaid data packs, 4G/5G packages \u2014 matches data_package rule and pricing tables in structured JSON.",
   "cases": [
     {
       "id": "data-01",
       "user_input": "What data packages do you have for 4G?",
-      "expected_intent": "data_package",
-      "expected_method": "rule"
+      "expected_intent": "rag",
+      "expected_method": "rag",
+      "flexible": true
     },
     {
       "id": "data-02",
       "user_input": "I need internet pack for 5g student package",
-      "expected_intent": "data_package",
-      "expected_method": "rule"
+      "expected_intent": "rag",
+      "expected_method": "rag",
+      "flexible": true
     }
   ]
 }

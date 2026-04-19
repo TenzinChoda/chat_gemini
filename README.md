@@ -1,6 +1,6 @@
 # BT Virtual Assistant
 
-**A hybrid AI assistant for Bhutan Telecom Limited (BTL)** — it answers common customer questions using a mix of **instant keyword rules**, **retrieval from your own documents** (Excel, JSON, CSV, PDF), and a **local large language  pythomodel** (Ollama). No paid cloud LLM API is required for the default setup.
+**A hybrid AI assistant for Bhutan Telecom Limited (BTL)** — it answers common customer questions using a mix of **instant keyword rules**, **retrieval from your own documents** (Excel, JSON, CSV, PDF), and a **local large language model** (Ollama). No paid cloud LLM API is required for the default setup.
 
 ---
 
@@ -48,7 +48,7 @@ pip install -r requirements.txt
 ollama pull llama3
 ```
 
-Ollama is required for **RAG** and LLM answers. Rule-based replies may still work for some questions if Ollama is not running.
+Ollama is required for answers. If Ollama is not running, the API will fall back to a generic contact message (1300 / bt.bt).
 
 **Step 6 — Build the knowledge index**
 
@@ -72,12 +72,11 @@ You should see that the server is listening on **http://127.0.0.1:8000** . Check
 
 **Step 8 — Open the chat UI**
 
-The chat page is **not** served by FastAPI. Use a **second** terminal (or your file manager):
+With the API running (Step 7), open the chat in your browser:
 
-- **macOS:** `open frontend/index.html`
-- **Windows:** double-click `frontend\index.html` in Explorer, or open it from your editor.
+**[http://127.0.0.1:8000/ui/](http://127.0.0.1:8000/ui/)**
 
-Alternatively, open **`frontend/index.html`** manually in Chrome, Edge, or Safari. The page calls **`http://localhost:8000`** — the server from Step 7 must stay running.
+This is served by the same FastAPI process (no second terminal or port **8080** needed). You can also open `frontend/index.html` as a file or via another static server; the page will call the API on port **8000**.
 
 **Step 9 — (Optional) Local configuration**
 
@@ -98,9 +97,8 @@ To override model names or paths without editing code, copy **`.env.example`** t
 
 ## How it works (at a glance)
 
-1. **Rules** — Fast answers when the user’s message matches curated keywords (e.g. SIM, bill, network).
-2. **RAG (retrieval-augmented generation)** — For other questions, the system finds similar passages in your indexed material and uses the local LLM to draft a reply.
-3. **Fallback** — If the model cannot answer safely, the user is directed to **1300**, **bt.bt**, or a service centre.
+1. **RAG (retrieval-augmented generation)** — The system retrieves relevant passages from your indexed material (Chroma) and uses the local LLM to draft a natural, conversational reply grounded in that context.
+2. **Fallback** — If retrieval or the model fails, or the answer is not supported by context, the user is directed to **1300**, **bt.bt**, or a service centre.
 
 Conversation turns can be logged locally for review and statistics (see `database/`).
 
@@ -233,7 +231,7 @@ bt_chatbot/
 │   ├── json/  excel/  csv/  pdf/
 ├── database/               # chroma_db/ (index), conversations.db (logs)
 ├── pipeline/ingest.py      # Build / refresh the vector index
-├── chatbot/                # Rules, RAG, hybrid orchestration
+├── chatbot/                # RAG chain + orchestration
 ├── api/app.py              # FastAPI service
 ├── frontend/index.html     # Chat UI (open in browser)
 ├── evaluation/
