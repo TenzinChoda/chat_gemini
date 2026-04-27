@@ -12,7 +12,7 @@ from __future__ import annotations
 from functools import lru_cache
 from pathlib import Path
 
-from pydantic import Field, computed_field, model_validator
+from pydantic import AliasChoices, Field, computed_field, model_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -39,9 +39,21 @@ class Settings(BaseSettings):
     conversations_db_path: Path | None = None
 
     # --- Models ---
-    ollama_model: str = "llama3"
-    # Slightly higher default for more natural phrasing (tune via BTL_OLLAMA_TEMPERATURE)
-    ollama_temperature: float = 0.35
+    # Gemini (Google Generative AI)
+    # Accept common env var names (and your current `.env` key) in addition to BTL_-prefixed vars.
+    gemini_api_key: str | None = Field(
+        default=None,
+        validation_alias=AliasChoices("BTL_GEMINI_API_KEY", "GEMINI_API_KEY", "gemini_api_key"),
+    )
+    gemini_model: str = Field(
+        default="gemini-2.0-flash",
+        validation_alias=AliasChoices("BTL_GEMINI_MODEL", "GEMINI_MODEL"),
+    )
+    gemini_temperature: float = Field(
+        default=0.35,
+        validation_alias=AliasChoices("BTL_GEMINI_TEMPERATURE", "GEMINI_TEMPERATURE"),
+    )
+
     embedding_model: str = "all-MiniLM-L6-v2"
     chroma_collection_name: str = "bt_knowledge_v2"
     # Higher k improves recall for factual questions where many chunks mention "BTL"

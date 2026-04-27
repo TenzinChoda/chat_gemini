@@ -2,7 +2,7 @@ langchain
 langchain-classic
 langchain-community
 langchain-core
-langchain-ollama
+langchain-google-genai
 langchain-chroma
 chromadb
 sentence-transformers

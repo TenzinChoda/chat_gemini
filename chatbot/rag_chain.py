@@ -1,4 +1,4 @@
-"""Layer 2: Chroma retrieval + Ollama with per-session memory (manual RAG for query control)."""
+"""Layer 2: Chroma retrieval + Gemini with per-session memory (manual RAG for query control)."""
 
 from __future__ import annotations
 
@@ -8,7 +8,7 @@ from langchain_classic.memory import ConversationBufferMemory
 from langchain_core.prompts import PromptTemplate
 from langchain_chroma import Chroma
 from langchain_community.embeddings import HuggingFaceEmbeddings
-from langchain_ollama import OllamaLLM
+from langchain_google_genai import ChatGoogleGenerativeAI
 
 from config.settings import get_settings
 
@@ -16,7 +16,7 @@ _s = get_settings()
 CHROMA_DIR = _s.chroma_persist_dir
 COLLECTION_NAME = _s.chroma_collection_name
 EMBED_MODEL = _s.embedding_model
-OLLAMA_MODEL = _s.ollama_model
+GEMINI_MODEL = _s.gemini_model
 
 RAG_PROMPT = """You are the BT Virtual Assistant for Bhutan Telecom Limited (BTL).
 Speak in a warm, natural, conversational tone—like a helpful human agent—but stay grounded in facts.
@@ -91,7 +91,7 @@ def _dedupe_docs(docs: list, cap: int) -> list:
 
 _embeddings: HuggingFaceEmbeddings | None = None
 _vectorstore: Chroma | None = None
-_llm: OllamaLLM | None = None
+_llm: ChatGoogleGenerativeAI | None = None
 
 _session_memories: dict[str, ConversationBufferMemory] = {}
 
@@ -118,10 +118,21 @@ def _get_vectorstore() -> Chroma:
     return _vectorstore
 
 
-def _get_llm() -> OllamaLLM:
+def _get_llm() -> ChatGoogleGenerativeAI:
     global _llm
     if _llm is None:
-        _llm = OllamaLLM(model=OLLAMA_MODEL, temperature=_s.ollama_temperature)
+        if not _s.gemini_api_key:
+            raise ValueError(
+                "Missing Gemini API key. Set GEMINI_API_KEY or gemini_api_key (or BTL_GEMINI_API_KEY)."
+            )
+        model_name = (GEMINI_MODEL or "").strip()
+        if model_name.startswith("models/"):
+            model_name = model_name[len("models/") :]
+        _llm = ChatGoogleGenerativeAI(
+            model=model_name,
+            temperature=_s.gemini_temperature,
+            google_api_key=_s.gemini_api_key,
+        )
     return _llm
 
 
@@ -153,7 +164,7 @@ def _confidence_from_sources(n: int) -> float:
 
 def get_rag_response(user_message: str, session_id: str) -> dict:
     """
-    Retrieve with an expanded query (fixes CEO vs 'Chief Executive Officer' mismatch), then answer with Ollama.
+    Retrieve with an expanded query (fixes CEO vs 'Chief Executive Officer' mismatch), then answer with Gemini.
     Chat history is passed only to the LLM, not to the retriever, so retrieval stays on-topic.
     """
     memory = _memory_for_session(session_id)
@@ -186,7 +197,8 @@ def get_rag_response(user_message: str, session_id: str) -> dict:
             )
 
         prompt = PromptTemplate(template=RAG_PROMPT, input_variables=["context", "question"])
-        answer = (_get_llm().invoke(prompt.format(context=context, question=q_for_llm)) or "").strip()
+        msg = _get_llm().invoke(prompt.format(context=context, question=q_for_llm))
+        answer = (getattr(msg, "content", None) or str(msg) or "").strip()
     except Exception as e:
         return {
             "response": "",

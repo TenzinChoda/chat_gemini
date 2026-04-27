@@ -1,4 +1,4 @@
-"""FastAPI server for the BT RAG chatbot (Chroma + Ollama)."""
+"""FastAPI server for the BT RAG chatbot (Chroma + Gemini)."""
 
 from __future__ import annotations
 
@@ -87,7 +87,7 @@ def feedback(body: FeedbackIn):
 
 @app.get("/health")
 def health():
-    return {"status": "running", "model": _settings.ollama_model}
+    return {"status": "running", "model": _settings.gemini_model}
 
 
 @app.get("/stats")

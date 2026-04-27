@@ -1,0 +1,205 @@
+[
+  {
+    "domain": "Network & Connectivity",
+    "question": "Why is my internet slow?",
+    "answer": "Slow internet can occur due to network congestion, weak signal, or data exhaustion. Try switching airplane mode on/off, move to a better coverage area, or restart your device. You can also check if your data balance is exhausted.",
+    "category": "troubleshooting",
+    "difficulty": "easy"
+  },
+  {
+    "domain": "Network & Connectivity",
+    "question": "No signal on my phone, what to do?",
+    "answer": "If you have no signal, restart your phone and ensure airplane mode is off. Check if your SIM is properly inserted. If the issue persists, try the SIM in another phone or visit a nearby service center.",
+    "category": "troubleshooting",
+    "difficulty": "easy"
+  },
+  {
+    "domain": "Network & Connectivity",
+    "question": "Why am I not getting 4G?",
+    "answer": "Ensure your phone supports 4G and that 4G is enabled in your network settings. Also confirm you are in a 4G coverage area and your SIM is 4G enabled.",
+    "category": "troubleshooting",
+    "difficulty": "medium"
+  },
+  {
+    "domain": "Network & Connectivity",
+    "question": "4g not working?",
+    "answer": "Please check your mobile data is turned on and your APN settings are correct. Restart your device and ensure you have an active data plan.",
+    "category": "troubleshooting",
+    "difficulty": "easy"
+  },
+  {
+    "domain": "Network & Connectivity",
+    "question": "How to check network coverage in my area?",
+    "answer": "You can check network coverage by visiting the Bhutan Telecom website or contacting customer care. Coverage depends on location and terrain.",
+    "category": "informational",
+    "difficulty": "easy"
+  },
+  {
+    "domain": "Network & Connectivity",
+    "question": "Call dropping frequently, why?",
+    "answer": "Call drops may occur due to weak signal, network congestion, or device issues. Try moving to an open area or restarting your phone.",
+    "category": "troubleshooting",
+    "difficulty": "medium"
+  },
+  {
+    "domain": "Network & Connectivity",
+    "question": "Internet works but very slow speed",
+    "answer": "Slow speed may be due to network load or low signal strength. Try switching between 4G/3G, moving location, or checking if your data limit is reached.",
+    "category": "troubleshooting",
+    "difficulty": "easy"
+  },
+  {
+    "domain": "Network & Connectivity",
+    "question": "Why does my network fluctuate?",
+    "answer": "Fluctuation occurs due to signal interference, location, or network load. Try moving to a stable location or restarting your device.",
+    "category": "informational",
+    "difficulty": "medium"
+  },
+  {
+    "domain": "Network & Connectivity",
+    "question": "No internet after recharge",
+    "answer": "Ensure mobile data is enabled and your APN settings are correct. Restart your phone. If the issue persists, contact support.",
+    "category": "troubleshooting",
+    "difficulty": "easy"
+  },
+  {
+    "domain": "Network & Connectivity",
+    "question": "How to improve signal strength?",
+    "answer": "Move to an open area, avoid indoor barriers, and keep your phone updated. Using a 4G-enabled SIM and device can also improve signal.",
+    "category": "informational",
+    "difficulty": "easy"
+  },
+  {
+    "domain": "Network & Connectivity",
+    "question": "Data not working but balance is there",
+    "answer": "Check if mobile data is enabled and APN settings are correct. Restart your device and ensure no data restrictions are active.",
+    "category": "troubleshooting",
+    "difficulty": "medium"
+  },
+  {
+    "domain": "Network & Connectivity",
+    "question": "Why does internet stop at night?",
+    "answer": "This may be due to network maintenance or congestion. Try again after some time or contact customer support.",
+    "category": "informational",
+    "difficulty": "medium"
+  },
+  {
+    "domain": "Network & Connectivity",
+    "question": "Network slow in my area only",
+    "answer": "This could be due to localized congestion or signal issues. Report the issue to customer support for investigation.",
+    "category": "complaint",
+    "difficulty": "medium"
+  },
+  {
+    "domain": "Network & Connectivity",
+    "question": "Why my calls are not connecting?",
+    "answer": "Check your signal strength and ensure your SIM is active. Restart your device and try again.",
+    "category": "troubleshooting",
+    "difficulty": "easy"
+  },
+  {
+    "domain": "Network & Connectivity",
+    "question": "Can I switch between 3G and 4G manually?",
+    "answer": "Yes, go to your phone settings > Mobile Network > Preferred Network Type and select your desired option.",
+    "category": "informational",
+    "difficulty": "easy"
+  },
+  {
+    "domain": "Network & Connectivity",
+    "question": "Why is my internet fast sometimes and slow sometimes?",
+    "answer": "Speed variations occur due to network traffic, location, and signal strength. Peak hours may reduce speed.",
+    "category": "informational",
+    "difficulty": "medium"
+  },
+  {
+    "domain": "Network & Connectivity",
+    "question": "internet not working?",
+    "answer": "Please check if mobile data is turned on, restart your phone, and verify your data balance.",
+    "category": "troubleshooting",
+    "difficulty": "easy"
+  },
+  {
+    "domain": "Network & Connectivity",
+    "question": "Why am I getting only 3G instead of 4G?",
+    "answer": "This may be due to limited 4G coverage in your area or your device settings. Enable 4G in settings and ensure coverage.",
+    "category": "troubleshooting",
+    "difficulty": "medium"
+  },
+  {
+    "domain": "Network & Connectivity",
+    "question": "Can weather affect network?",
+    "answer": "Yes, extreme weather conditions can temporarily affect signal strength and connectivity.",
+    "category": "informational",
+    "difficulty": "easy"
+  },
+  {
+    "domain": "Network & Connectivity",
+    "question": "Why is my data getting consumed fast?",
+    "answer": "Background apps and video streaming can consume data quickly. Monitor usage in your phone settings.",
+    "category": "informational",
+    "difficulty": "medium"
+  },
+  {
+    "domain": "Network & Connectivity",
+    "question": "My network is completely down",
+    "answer": "Restart your phone and check if others in your area face the same issue. If yes, report it to customer support.",
+    "category": "complaint",
+    "difficulty": "medium"
+  },
+  {
+    "domain": "Network & Connectivity",
+    "question": "Why can't I browse even with full signal?",
+    "answer": "Check if your data plan is active and APN settings are correct. Restart your phone.",
+    "category": "troubleshooting",
+    "difficulty": "medium"
+  },
+  {
+    "domain": "Network & Connectivity",
+    "question": "Slow net after data pack finished?",
+    "answer": "After data quota is exhausted, speed may reduce due to Fair Usage Policy. Recharge a new plan for full speed.",
+    "category": "informational",
+    "difficulty": "easy"
+  },
+  {
+    "domain": "Network & Connectivity",
+    "question": "Signal good but speed low",
+    "answer": "This may be due to network congestion. Try at a different time or location.",
+    "category": "troubleshooting",
+    "difficulty": "medium"
+  },
+  {
+    "domain": "Network & Connectivity",
+    "question": "Why internet disconnects frequently?",
+    "answer": "Frequent disconnection may be due to weak signal or device issues. Restart your phone and check network settings.",
+    "category": "troubleshooting",
+    "difficulty": "medium"
+  },
+  {
+    "domain": "Network & Connectivity",
+    "question": "Is 5G available?",
+    "answer": "5G availability depends on location. You can check with Bhutan Telecom for coverage updates.",
+    "category": "informational",
+    "difficulty": "easy"
+  },
+  {
+    "domain": "Network & Connectivity",
+    "question": "How to reset network settings?",
+    "answer": "Go to phone settings > System > Reset > Network settings. This will reset WiFi, mobile, and Bluetooth settings.",
+    "category": "transactional",
+    "difficulty": "medium"
+  },
+  {
+    "domain": "Network & Connectivity",
+    "question": "Why my hotspot is slow?",
+    "answer": "Hotspot speed depends on your mobile data speed and connected devices. Limit users and ensure strong signal.",
+    "category": "informational",
+    "difficulty": "medium"
+  },
+  {
+    "domain": "Network & Connectivity",
+    "question": "Data works on some apps but not others",
+    "answer": "Check app permissions and restrictions. Some apps may be blocked or require updates.",
+    "category": "troubleshooting",
+    "difficulty": "medium"
+  }
+]
