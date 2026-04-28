@@ -200,6 +200,9 @@ def get_rag_response(user_message: str, session_id: str) -> dict:
         msg = _get_llm().invoke(prompt.format(context=context, question=q_for_llm))
         answer = (getattr(msg, "content", None) or str(msg) or "").strip()
     except Exception as e:
+        import traceback
+        print(f"[RAG ERROR] {type(e).__name__}: {e}")
+        traceback.print_exc()
         return {
             "response": "",
             "source_services": [],
